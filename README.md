@@ -4,7 +4,7 @@
 > Incluir nome RA e foco de especialização de cada membro do grupo.
 > |Nome  | RA | Especialização|
 > |--|--|--|
-> | Cleverson Faria de Oliveira  | 123456  | Elétrica |
+> | Cleverson Faria de Oliveira  | 298244  | Elétrica |
 > | David Fernando Prieto Cardoso | 123456 | XXX |
 > | Gabriela Morales Soto  | 123456  | Eletrônica |
 > | Jenisson Linike Costa Gonçalves | 123456 | Biologia |
