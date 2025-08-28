@@ -3,9 +3,9 @@
 
 > |Nome  | RA | Especialização|
 > |--|--|--|
-> | Cleverson Faria de Oliveira  | 298244  | Elétrica |
+> | Cleverson Faria de Oliveira  | 298244  | Elétrica e Computação |
 > | David Fernando Prieto Cardoso | 298817 | Ciência da Computação e Ciência de dados |
-> | Gabriela Morales Soto  | 299213  | Eletrônica |
+> | Gabriela Morales Soto  | 299213  | Engenharia Eletrônica Ciência da Computação |
 > | Jenisson Linike Costa Gonçalves | 299078 | Alimentos e Nutrição |
 > | Marcel Teuber  | 298838  | Gestão e Ciência da Computação |
 > | Micheli Canuto de Lima  | 295866  | Biologia Molecular e Morfofuncional Ciências Biomédicas |
