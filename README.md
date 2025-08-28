@@ -5,7 +5,7 @@
 > |--|--|--|
 > | Cleverson Faria de Oliveira  | 298244  | Elétrica |
 > | David Fernando Prieto Cardoso | 123456 | XXX |
-> | Gabriela Morales Soto  | 123456  | Eletrônica |
+> | Gabriela Morales Soto  | 299213  | Eletrônica |
 > | Jenisson Linike Costa Gonçalves | 299078 | Alimentos e Nutrição |
 > | Marcel Teuber  | 298838  | Gestão e Ciência da Computação |
 > | Micheli Canuto de Lima  | 123456  | Saúde |
