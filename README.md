@@ -1,14 +1,13 @@
 # Projeto `Correlação Entre Tecido Adiposo Periprostático e Cancer de Próstata`
 # Project `Correlation Between Periprostatic Adipose Tissue and Prostate Cancer`
 
-> Incluir nome RA e foco de especialização de cada membro do grupo.
 > |Nome  | RA | Especialização|
 > |--|--|--|
 > | Cleverson Faria de Oliveira  | 298244  | Elétrica |
 > | David Fernando Prieto Cardoso | 123456 | XXX |
 > | Gabriela Morales Soto  | 123456  | Eletrônica |
 > | Jenisson Linike Costa Gonçalves | 299078 | Alimentos e Nutrição |
-> | Marcel Teuber  | 123456  | XXX |
+> | Marcel Teuber  | 298838  | Gestão e Ciência da Computação |
 > | Micheli Canuto de Lima  | 123456  | Saúde |
 
 # Apresentação
