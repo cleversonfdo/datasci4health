@@ -1,14 +1,14 @@
-# Projeto `Correlação Entre Tecido Adiposo Periprostático e Cancer de Próstata`
-# Project `Correlation Between Periprostatic Adipose Tissue and Prostate Cancer`
+# Projeto `Clusters de coexpressão gênica em pacientes com câncer de próstata com e sem obesidade: impactos na progressão tumoral`
+# Project `Gene Expression Clusters in Prostate Cancer Patients With and Without Obesity: Impacts on Tumor Progression`
 
 > |Nome  | RA | Especialização|
 > |--|--|--|
-> | Cleverson Faria de Oliveira  | 298244  | Elétrica e Computação |
-> | David Fernando Prieto Cardoso | 298817 | Ciência da Computação e Ciência de dados |
-> | Gabriela Morales Soto  | 299213  | Engenharia Eletrônica e Ciência da Computação |
-> | Jenisson Linike Costa Gonçalves | 299078 | Alimentos e Nutrição |
-> | Marcel Teuber  | 298838  | Gestão e Ciência da Computação |
-> | Micheli Canuto de Lima  | 295866  | Biologia Molecular e Morfofuncional Ciências Biomédicas |
+> | Cleverson Faria de Oliveira  | 298244  | Computação |
+> | David Fernando Prieto Cardoso | 298817 | Computação |
+> | Gabriela Morales Soto  | 299213  | Computação |
+> | Jenisson Linike Costa Gonçalves | 299078 | Alimentos / Nutrição |
+> | Marcel Teuber  | 298838  | Computação |
+> | Micheli Canuto de Lima  | 295866  | Biologia |
 
 # Apresentação
 
