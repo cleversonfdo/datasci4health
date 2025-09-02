@@ -1,5 +1,5 @@
-# Projeto `Correlação Entre Tecido Adiposo Periprostático e Cancer de Próstata`
-# Project `Correlation Between Periprostatic Adipose Tissue and Prostate Cancer`
+# Projeto `Clusters de coexpressão gênica em pacientes com câncer de próstata com e sem obesidade: impactos na progressão tumoral`
+# Project `Gene Expression Clusters in Prostate Cancer Patients With and Without Obesity: Impacts on Tumor Progression`
 
 # Descrição Resumida do Projeto
 
