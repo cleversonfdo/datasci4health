@@ -59,9 +59,9 @@ A proposta deste projeto é analisar dados de expressão gênica de pacientes co
 
 
 # Ferramentas
-
-> Ferramentas a serem utilizadas (com base na visão atual do grupo sobre o projeto).
-
+- Cytoscape
+- RStudio
+- STRING
 # Referências Bibliográficas
 
 > Lista de artigos, links e referências bibliográficas.
