@@ -29,8 +29,8 @@ A proposta deste projeto é analisar dados de expressão gênica de pacientes co
 
 > Base de Dados | Endereço na Web | Resumo descritivo
 > ----- | ----- | -----
-> Título da Base 1 | http://base1.org/ | Breve resumo (duas ou três linhas) sobre a base.
-> Título da Base 2 | http://base2.org/ | Breve resumo (duas ou três linhas) sobre a base.
+> GEO | https://www.ncbi.nlm.nih.gov/gds | Breve resumo (duas ou três linhas) sobre a base.
+> TCGA | https://portal.gdc.cancer.gov/ | Breve resumo (duas ou três linhas) sobre a base.
 
 # Modelo Lógico
 
