@@ -52,25 +52,21 @@ The Cancer Genome Atlas Program (TCGA) | https://portal.gdc.cancer.gov/ | Consó
 > ![Modelo Lógico de Grafos](assets/images/modelo_logico.png)
 
 # Metodologia
-1. Busca em bases de dados por coexpressão de transcritos coletados de indivíduos obesos com e sem câncer de próstata.
+1. Para  obtenção dos dados serão utilizados datasets públicos de expressão gênica disponíveis em repositórios internacionais como TCGA (PRAD), GEO e cBioPortal, que reúnem dados moleculares e clínicos de pacientes com câncer de próstata.
+2. Pré-processamento e controle de qualidade:
+* Filtragem dos dados de expressão.
+* Remoção de genes com baixa expressão.
+3. Análise de expressão diferencial (DEG)
+* Realizada no RStudio, comparando os grupos obesos vs. não obesos.
+* Identificação de genes diferencialmente expressos.
+* Construção de gráficos para visualizar a distribuição dos DEGs.
+4. Análise funcional e enriquecimento de vias
+* O objetivo é identificar processos biológicos e vias moleculares associados à obesidade e à progressão do câncer de próstata (inflamação, metabolismo, sinalização hormonal).
+5. Construção de redes de interação e identificação de genes-chave.
+* Análise da topologia da rede em Cytoscape para determinar genes centrais e clusters de coexpressão relevantes.
+* Seleção de genes candidatos para validação posterior.
+6. Validação clínica no TCGA
 
-
-2. Identificação de coexpressões relevantes entre os transcritos.
-
-
-3. Construção de uma rede de interação entre esses transcritos para pacientes com câncer de próstata com e sem obesidade.
-
-
-4. Análise da topologia da rede para determinar a centralidade dos nós e a presença de hubs e comunidades.
-
-
-5. Comparação das redes e identificação de transcritos candidatos a biomarcadores.
-
-
-6. Análise de enriquecimento de vias para identificar quais transcritos candidatos apresentam expressão significativa em vias de interesse.
-
-
-7. Correlação desses biomarcadores no contexto do desenvolvimento do câncer de próstata.
 
 
 # Ferramentas
