@@ -34,10 +34,6 @@ A proposta deste projeto é analisar dados de expressão gênica de pacientes co
 
 # Modelo Lógico
 
-> Modelo lógico da base de grafos que será construída. Para o modelo de grafos de propriedades, utilize este
-> [modelo de base](https://docs.google.com/presentation/d/10RN7bDKUka_Ro2_41WyEE76Wxm4AioiJOrsh6BRY3Kk/edit?usp=sharing) para construir o seu.
-> Coloque a imagem do PNG do seu modelo lógico como ilustrado abaixo (a imagem estará na pasta `image`):
->
 > ![Modelo Lógico de Grafos](assets/images/modelo_logico.png)
 
 # Metodologia
