@@ -17,11 +17,11 @@ A proposta deste projeto é analisar dados de expressão gênica de pacientes co
 
 # Fundamentação Teórica
 
-- O câncer de próstata (CaP) é a neoplasia mais incidente em homens no Brasil, apresentando fatores de risco como idade, histórico familiar e etnia (INCA,2022)[^1].
+- O câncer de próstata (CaP) é a neoplasia mais incidente em homens no Brasil, apresentando fatores de risco como idade, histórico familiar e etnia (INCA,2022)[1].
 
-- Evidências recentes indicam que a obesidade é um importante modulador da progressão do CaP, associada a tumores mais agressivos e maior mortalidade ​(Avgerinos et al., 2019; Cao & Ma, 2011)[^2][^3].
+- Evidências recentes indicam que a obesidade é um importante modulador da progressão do CaP, associada a tumores mais agressivos e maior mortalidade ​(Avgerinos et al., 2019; Cao & Ma, 2011)[2][3].
   
-- A obesidade, além de alterar o metabolismo sistêmico, promove inflamação crônica e desregulação hormonal por meio da secreção de adipocinas, citocinas inflamatórias e do aumento da conversão de testosterona em estradiol no tecido adiposo (Liermann-Wooldrik et al., 2024)​[^4]. Esses mecanismos contribuem para a instabilidade genômica e maior agressividade tumoral.
+- A obesidade, além de alterar o metabolismo sistêmico, promove inflamação crônica e desregulação hormonal por meio da secreção de adipocinas, citocinas inflamatórias e do aumento da conversão de testosterona em estradiol no tecido adiposo (Liermann-Wooldrik et al., 2024)​[4]. Esses mecanismos contribuem para a instabilidade genômica e maior agressividade tumoral.
 
 Portanto, investigar como a obesidade impacta o microambiente prostático por meio da análise da expressão gênica diferencial é fundamental para esclarecer os mecanismos envolvidos na progressão do CaP e apontar possíveis alvos para intervenção terapêutica.
 
@@ -79,6 +79,10 @@ The Cancer Genome Atlas Program (TCGA) | https://portal.gdc.cancer.gov/ | Consó
 - STRING
 # Referências Bibliográficas
 
-> Lista de artigos, links e referências bibliográficas.
->
-> Fiquem à vontade para escolher o padrão de referenciamento preferido pelo grupo.
+[1] INCA. Instituto Nacional de Câncer. *Estimativa 2022: Incidência de Câncer no Brasil*. Rio de Janeiro: INCA; 2022. Disponível em: https://www.inca.gov.br  
+
+[2] Avgerinos KI, Spyrou N, Mantzoros CS, Dalamaga M. Obesity and cancer risk: Emerging biological mechanisms and perspectives. *Metabolism*. 2019;92:121-135. doi:10.1016/j.metabol.2018.11.001  
+
+[3] Cao Y, Ma J. Body mass index, prostate cancer–specific mortality, and biochemical recurrence: a systematic review and meta-analysis. *Cancer Prev Res*. 2011;4(4):486-501. doi:10.1158/1940-6207.CAPR-10-0229  
+
+[4] Liermann-Wooldrik C, et al. Obesity-driven mechanisms in prostate cancer progression. *Frontiers in Oncology*. 2024;14:XXXX. doi:10.3389/fonc.2024.XXXXX
