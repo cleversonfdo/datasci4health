@@ -43,7 +43,7 @@ A proposta deste projeto é analisar dados de expressão gênica de pacientes co
 2. Identificação de coexpressões relevantes entre os transcritos.
 
 
-3. Construção de uma rede de interação entre esses transcritos para indivíduos obesos com e sem câncer de próstata.
+3. Construção de uma rede de interação entre esses transcritos para pacientes com câncer de próstata com e sem obesidade.
 
 
 4. Análise da topologia da rede para determinar a centralidade dos nós e a presença de hubs e comunidades.
