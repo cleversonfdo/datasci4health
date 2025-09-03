@@ -13,7 +13,10 @@ A proposta deste projeto é analisar dados de expressão gênica de pacientes co
 
 # Slides
 
-> Coloque aqui o link para o PDF da apresentação da parte 1.
+# Slides
+
+[Ver presentación (PDF)](https://github.com/tuusuario/tu-repo/raw/main/slides.pdf)
+
 
 # Fundamentação Teórica
 
