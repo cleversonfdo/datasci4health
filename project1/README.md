@@ -37,8 +37,26 @@ A proposta deste projeto é analisar dados de expressão gênica de pacientes co
 > ![Modelo Lógico de Grafos](assets/images/modelo_logico.png)
 
 # Metodologia
-> Esta seção evoluirá ao longo do projeto. Nesta primeira entrega, informe técnicas de Ciência de Redes que pretende explorar,
-> tais como: detecção de comunidades, análise de centralidade, predição de links, ou a combinação de uma ou mais técnicas. Descreva o que perguntas pretende endereçar cm a técnica escolhida.
+1. Busca em bases de dados por coexpressão de transcritos coletados de indivíduos obesos com e sem câncer de próstata.
+
+
+2. Identificação de coexpressões relevantes entre os transcritos.
+
+
+3. Construção de uma rede de interação entre esses transcritos para indivíduos obesos com e sem câncer de próstata.
+
+
+4. Análise da topologia da rede para determinar a centralidade dos nós e a presença de hubs e comunidades.
+
+
+5. Comparação das redes e identificação de transcritos candidatos a biomarcadores.
+
+
+6. Análise de enriquecimento de vias para identificar quais transcritos candidatos apresentam expressão significativa em vias de interesse.
+
+
+7. Correlação desses biomarcadores no contexto do desenvolvimento do câncer de próstata.
+
 
 # Ferramentas
 
