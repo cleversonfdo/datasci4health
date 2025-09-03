@@ -17,7 +17,14 @@ A proposta deste projeto é analisar dados de expressão gênica de pacientes co
 
 # Fundamentação Teórica
 
-> Fundamentação teórica resumida do problema em saúde/biologia. Apenas cite artigos que tomará como base e, em uma frase, em que problema.
+- O câncer de próstata (CaP) é a neoplasia mais incidente em homens no Brasil, apresentando fatores de risco como idade, histórico familiar e etnia (INCA,2022).
+
+- Evidências recentes indicam que a obesidade é um importante modulador da progressão do CaP, associada a tumores mais agressivos e maior mortalidade ​(Avgerinos et al., 2019; Cao & Ma, 2011).
+  
+- A obesidade, além de alterar o metabolismo sistêmico, promove inflamação crônica e desregulação hormonal por meio da secreção de adipocinas, citocinas inflamatórias e do aumento da conversão de testosterona em estradiol no tecido adiposo (Liermann-Wooldrik et al., 2024)​. Esses mecanismos contribuem para a instabilidade genômica e maior agressividade tumoral.
+
+Portanto, investigar como a obesidade impacta o microambiente prostático por meio da análise da expressão gênica diferencial é fundamental para esclarecer os mecanismos envolvidos na progressão do CaP e apontar possíveis alvos para intervenção terapêutica.
+
 
 # Perguntas de Pesquisa
 
