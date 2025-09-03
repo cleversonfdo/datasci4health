@@ -23,7 +23,7 @@ A proposta deste projeto é analisar dados de expressão gênica de pacientes co
 
 Quais genes são diferencialmente expressos entre tumores de pacientes com câncer de próstata obesos/sobrepeso e tumores de pacientes normopeso, e como os perfis de expressão destes genes se associam a parâmetros clínicos de progressão tumoral?
 
---Hipóteses--
+__Hipóteses__
 - A obesidade altera o padrão de expressão gênica em tumores de pacientes com câncer de próstata, resultando em um conjunto distinto de genes diferencialmente expressos entre obesos/sobrepeso e normopeso.
 
 
