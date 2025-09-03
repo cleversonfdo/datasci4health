@@ -85,4 +85,4 @@ The Cancer Genome Atlas Program (TCGA) | https://portal.gdc.cancer.gov/ | Consó
 
 <a id="3">[3]</a> Cao Y, Ma J. Body mass index, prostate cancer–specific mortality, and biochemical recurrence: a systematic review and meta-analysis. *Cancer Prev Res*. 2011;4(4):486-501. [https://doi.org/10.1158/1940-6207.CAPR-10-0229](https://doi.org/10.1158/1940-6207.CAPR-10-0229)  
 
-<a id="4">[4]</a> Liermann-Wooldrik C, et al. Obesity-driven mechanisms in prostate cancer progression. *Front Oncol*. 2024;14:XXXX. [https://doi.org/10.3389/fonc.2024.XXXXX](https://doi.org/10.3389/fonc.2024.XXXXX)  
+<a id="4">[4]</a> Liermann-Wooldrik C, et al. Obesity-driven mechanisms in prostate cancer progression. *Front Oncol*. 2024;14. [https://doi.org/10.3390/ijms252212137] 
