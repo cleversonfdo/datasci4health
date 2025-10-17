@@ -1,0 +1,530 @@
+```{r setup, include=FALSE}
+# This code chunk is named "setup" and its output will not be included in the final report.
+# The 'include=FALSE' option hides both the code and its output when rendering (e.g., to HTML or PDF),
+# but the code still runs in the background.
+
+knitr::opts_chunk$set(echo = TRUE)
+# Set global options for all code chunks in the R Markdown document.
+# 'echo = TRUE' means that, by default, R code will be shown in the final output.
+# You can override this setting later in individual chunks if desired.
+```
+
+```{r, message=FALSE, warning=FALSE}
+# =====================================================
+# Installation and loading of required packages
+# =====================================================
+
+# Check if 'BiocManager' is installed (needed for Bioconductor packages).
+# If not, install it automatically.
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+
+# -----------------------------------------------------
+# Install and load CRAN packages
+# -----------------------------------------------------
+
+# Check if 'ggplot2' is installed. If not, install it along with dependencies.
+library(ggplot2)  # Load the package for data visualization.
+
+# The following commands check and install packages if not already installed:
+# 'gprofiler2' → functional enrichment analysis for genes
+# 'dplyr'      → efficient data manipulation
+# 'ggplot2'    → plotting (repeated here for safety)
+# 'plotly'     → interactive plots
+if (!requireNamespace("gprofiler2", quietly = TRUE)) install.packages("gprofiler2")
+if (!requireNamespace("dplyr", quietly = TRUE)) install.packages("dplyr")
+if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
+if (!requireNamespace("plotly", quietly = TRUE)) install.packages("plotly")
+
+# -----------------------------------------------------
+# Install Bioconductor packages (if not already installed)
+# -----------------------------------------------------
+# 'GEOquery' → download and parse GEO datasets
+# 'limma'    → linear modeling for microarray or RNA-seq analysis
+BiocManager::install(c("GEOquery", "limma"), ask = FALSE)
+
+# -----------------------------------------------------
+# Load all required libraries
+# -----------------------------------------------------
+library(gprofiler2)  # Functional enrichment analysis
+library(dplyr)       # Data manipulation
+library(ggplot2)     # Data visualization
+library(plotly)      # Interactive plotting
+library(GEOquery)    # Access GEO datasets
+library(limma)       # Differential expression analysis
+library(tidyr)       # Data tidying
+library(stringr)     # String manipulation
+```
+
+# GSE79021
+
+## Importing data
+
+```{r, message=FALSE, warning=FALSE}
+# =====================================================
+# Import GEO dataset
+# =====================================================
+
+# Option 1 (commented out): download the dataset directly from GEO
+# gse_soft <- getGEO("GSE79021", GSEMatrix = FALSE)
+
+# Option 2 (active): load the dataset from a local file
+gse_soft <- getGEO(filename = "GSE79021_family.soft.gz")
+# 'getGEO()' reads a GEO dataset in SOFT format.
+# - 'filename' specifies the local SOFT file to load.
+# - The result, 'gse_soft', contains the full GEO dataset object,
+#   including metadata, platform information, and expression data.
+```
+
+```{r, message=FALSE, warning=FALSE}
+# =====================================================
+# Inspect the GEO dataset
+# =====================================================
+
+View(gse_soft)  
+# Opens a spreadsheet-style viewer in RStudio to explore the contents of 'gse_soft'.
+# You can see metadata, platform information, and possibly expression values.
+```
+
+## Raw Table
+
+```{r, message=FALSE, warning=FALSE}
+# =====================================================
+# Extract sample-level expression data from GEO dataset
+# =====================================================
+
+# Get the list of all samples (GSM objects) from the GEO dataset
+samples <- GSMList(gse_soft)
+
+# -----------------------------------------------------
+# Function to extract relevant data from a single sample
+# -----------------------------------------------------
+extrair_dados <- function(x) {
+  header <- Meta(x)   # Get metadata of the sample
+  table  <- Table(x)  # Get the expression table for the sample
+  
+  geo_accession <- header$geo_accession         # Sample ID
+  characteristics <- header$characteristics_ch1 # Sample characteristics (e.g., group, BMI)
+  
+  # Combine characteristics into a single string
+  char_str <- paste(characteristics, collapse = "; ")
+  
+  # Extract 'group' and 'bmi' from the characteristics using regex
+  group <- str_match(char_str, "group:\\s*([^;]+)")[,2]
+  bmi   <- str_match(char_str, "bmi:\\s*([0-9.]+)")[,2]
+  
+  # Create a dataframe with expression values and metadata
+  df <- table %>%
+    mutate(
+      geo_accession = geo_accession,  # Add sample ID
+      group = trimws(group),           # Clean whitespace
+      bmi = as.numeric(bmi)            # Convert BMI to numeric
+    ) %>%
+    select(geo_accession, group, bmi, ID_REF, VALUE)  # Keep relevant columns
+  
+  return(df)
+}
+
+# -----------------------------------------------------
+# Apply the function to all samples
+# -----------------------------------------------------
+dados_lista <- lapply(samples, extrair_dados)  # List of dataframes, one per sample
+
+# Combine all sample dataframes into a single long-format dataframe
+dados_long <- bind_rows(dados_lista)
+
+# -----------------------------------------------------
+# Convert from long format to wide format
+# -----------------------------------------------------
+raw_data <- dados_long %>%
+  pivot_wider(
+    id_cols = c(geo_accession, group, bmi),  # Keep sample metadata as rows
+    names_from = ID_REF,                      # Each gene becomes a column
+    values_from = VALUE                        # Expression values fill the cells
+  )
+
+raw_data[ , -(1:3)] <- lapply(raw_data[ , -(1:3)], function(x) as.numeric(as.character(x)))
+
+# -----------------------------------------------------
+# Inspect the first few rows and columns
+# -----------------------------------------------------
+raw_data[1:5, 1:8]  # View first 5 rows and 8 columns to verify data
+```
+
+```{r, message=FALSE, warning=FALSE}
+# =====================================================
+# List sample IDs and check number of samples
+# =====================================================
+
+# Get the names (IDs) of all GSM samples in the GEO dataset
+gsm_list <- names(GSMList(gse_soft))
+
+# Check how many samples are in the dataset
+length(gsm_list)  
+# Returns the total number of samples (GSMs) in 'gse_soft'.
+```
+
+## Saving csv file
+
+```{r, message=FALSE, warning=FALSE}
+# =====================================================
+# Save processed dataset to CSV
+# =====================================================
+
+# Write the wide-format expression dataset to a CSV file
+write.csv(raw_data, "GSE79021.csv", row.names = FALSE)#TRUE)
+
+# - 'raw_data' is the dataframe containing sample metadata and gene expression values
+# - "GSE79021.csv" is the output file name
+# - 'row.names = TRUE' includes row names in the CSV (by default, usually the sample indices)
+```
+
+## Loading csv file
+
+```{r, message=FALSE, warning=FALSE}
+# =====================================================
+# Load the CSV file back into R
+# =====================================================
+
+df <- read.csv(
+  "GSE79021.csv",       # Path to the CSV file
+  stringsAsFactors = FALSE,  # Prevent automatic conversion of text columns to factors
+  header = TRUE#,             # First row contains column names
+  #row.names = 1              # First column contains row names (sample IDs)
+)
+
+# 'df' now contains the wide-format expression dataset with metadata (group, bmi)
+# and gene expression values, ready for further analysis.
+```
+
+```{r, message=FALSE, warning=FALSE}
+# =====================================================
+# Preview the first few rows of the dataset
+# =====================================================
+
+head(df)  
+# Displays the first 6 rows of 'df' in the console.
+# Useful to quickly inspect sample metadata (geo_accession, group, bmi)
+# and the first few gene expression columns.
+```
+
+## Separating tumor and normal prostate
+
+```{r, message=FALSE, warning=FALSE}
+# =====================================================
+# Subset the dataset by tissue type and BMI
+# =====================================================
+
+# Tumor samples with BMI >= 30 (obese)
+dftumor_ob <- df %>%
+  filter(group == "FFPE prostate tumor", bmi >= 30)
+
+# Tumor samples with BMI < 30 (non-obese)
+dftumor_np <- df %>%
+  filter(group == "FFPE prostate tumor", bmi < 30)
+
+# Normal tissue samples with BMI >= 30 (obese)
+dfnormal_ob <- df %>%
+  filter(group == "FFPE normal_prostate", bmi >= 30)
+
+# Normal tissue samples with BMI < 30 (non-obese)
+dfnormal_np <- df %>%
+  filter(group == "FFPE normal_prostate", bmi < 30)
+
+# -----------------------------------------------------
+# Preview subsets
+# -----------------------------------------------------
+
+# Tumor / Non-obese
+head(dftumor_np)
+
+# Tumor / Obese
+head(dftumor_ob)
+
+# Normal / Non-obese
+head(dfnormal_np)
+
+# Normal / Obese
+head(dfnormal_ob)
+```
+
+```{r, message=FALSE, warning=FALSE}
+# =====================================================
+# Save subsetted datasets to separate CSV files
+# =====================================================
+
+# Tumor samples / Obese
+write.csv(dftumor_ob, "dftumor_ob.csv", row.names = FALSE)
+
+# Tumor samples / Non-obese
+write.csv(dftumor_np, "dftumor_np.csv", row.names = FALSE)
+
+# Normal tissue / Obese
+write.csv(dfnormal_ob, "dfnormal_ob.csv", row.names = FALSE)
+
+# Normal tissue / Non-obese
+write.csv(dfnormal_np, "dfnormal_np.csv", row.names = FALSE)
+# -----------------------------------------------------
+# Notes:
+# - Each CSV contains only the relevant subset of samples.
+# - 'row.names = FALSE' avoids writing row numbers to the file.
+# - These files can be used for downstream differential expression or other analyses.
+```
+
+## Nodes: DEG
+
+```{r, message=FALSE, warning=FALSE}
+# =====================================================
+# Function to calculate Differentially Expressed Genes (DEGs)
+# =====================================================
+calc_deg <- function(df1, df2, nome_contraste) {
+  # Extract expression values only (exclude first 3 metadata columns: geo_accession, group, bmi)
+  expr1 <- df1[, 4:ncol(df1)]
+  expr2 <- df2[, 4:ncol(df2)]
+
+  # Keep only genes present in both datasets
+  common_genes <- intersect(colnames(expr1), colnames(expr2))
+  expr1 <- expr1[, common_genes]
+  expr2 <- expr2[, common_genes]
+
+  # Compute mean expression per gene in each group
+  mean1 <- colMeans(expr1, na.rm = TRUE)
+  mean2 <- colMeans(expr2, na.rm = TRUE)
+
+  # Compute log2 fold change
+  log2FC <- log2(mean1 + 1e-8) - log2(mean2 + 1e-8)  # add small constant to avoid log(0)
+
+  # Compute p-values using a t-test for each gene
+  pvals <- sapply(common_genes, function(g) {
+    tryCatch({
+      t.test(expr1[[g]], expr2[[g]])$p.value
+    }, error = function(e) 1)  # If t-test fails, assign p-value = 1 (non-significant)
+  })
+
+  # Compute -log10(p-value) for volcano plot
+  negLogP <- -log10(pvals)
+
+  # Create final DEG table
+  deg <- data.frame(
+    gene = common_genes,
+    log2FC = log2FC,
+    negLog10P = negLogP
+  )
+
+  # Sort by absolute fold change (descending) and then by p-value
+  deg <- deg[order(-abs(deg$log2FC), deg$negLog10P, decreasing = TRUE), ]
+
+  # Save DEG table to CSV
+  out_csv <- paste0("DEG_", nome_contraste, ".csv")
+  write.csv(deg, out_csv, row.names = FALSE)
+
+  # -----------------------------------------------------
+  # Volcano plot
+  # -----------------------------------------------------
+  png_filename <- paste0("Volcano_", nome_contraste, ".png")
+
+  ##################################################################
+  # Visual thresholds for coloring
+  fc_thresh <- 0.2 # 0.30103        # Fold change threshold (log2)
+  p_thresh  <- 0.05 #0.05        # -log10(p) threshold (~p < 0.05)
+  ##################################################################
+  
+  # Label genes based on significance
+  deg$significance <- "NS"
+  deg$significance[deg$log2FC > fc_thresh & deg$negLog10P > p_thresh] <- "Up"
+  deg$significance[deg$log2FC < -fc_thresh & deg$negLog10P > p_thresh] <- "Down"
+
+  # Create volcano plot with ggplot2
+  p <- ggplot(deg, aes(
+        x = log2FC,          # x-axis: log2 fold change of each gene
+        y = negLog10P,       # y-axis: -log10(p-value) for each gene
+        color = significance # color points based on significance: Up, Down, NS
+      )) +
+    
+    geom_point(alpha = 0.7, size = 1.8) +  # Scatter points with semi-transparency and size 1.8
+    
+    # Set custom colors for significance
+    scale_color_manual(values = c(
+      "Down" = "blue", 
+      "NS"   = "gray60", 
+      "Up"   = "red"
+    )) +
+    
+    # Add dashed vertical lines at thresholds for log2 fold change
+    geom_vline(xintercept = c(-fc_thresh, fc_thresh), linetype = "dashed", color = "black") +
+    
+    # Add dashed horizontal line at threshold for -log10(p-value)
+    geom_hline(yintercept = p_thresh, linetype = "dashed", color = "black") +
+    
+    theme_minimal(base_size = 13) +        # Minimalist theme with base font size 13
+    xlab("log2(Fold Change)") +            # Label x-axis
+    ylab("-log10(p-value)") +              # Label y-axis
+    
+    # Title of the plot, replacing underscores in contrast name with spaces
+    ggtitle(paste0("Volcano Plot: ", gsub("_", " ", nome_contraste))) +
+    
+    theme(legend.position = "top")         # Position legend at the top
+
+
+  # Save volcano plot as PNG
+  ggsave(png_filename, p, width = 7, height = 6, dpi = 300)
+
+  message("✅ DEG and Volcano plot generated: ", nome_contraste)
+  return(list(
+    deg = deg,
+    fc_thresh = fc_thresh,
+    p_thresh = p_thresh
+  ))
+}
+
+# =====================================================
+# Run DEG analysis for all contrasts
+# =====================================================
+deg_tumorNP_vs_normalNP <- calc_deg(dftumor_np, dfnormal_np, "TumorNP_vs_NormalNP")
+#result <- calc_deg(dftumor_np, dfnormal_np, "TumorNP_vs_NormalNP")
+fc_thresh  <- deg_tumorNP_vs_normalNP$fc_thresh
+p_thresh      <- deg_tumorNP_vs_normalNP$p_thresh
+
+deg_tumorOB_vs_normalOB <- calc_deg(dftumor_ob, dfnormal_ob, "TumorOB_vs_NormalOB")
+deg_tumorOB_vs_tumorNP  <- calc_deg(dftumor_ob, dftumor_np, "TumorOB_vs_TumorNP")
+deg_normalOB_vs_normalNP <- calc_deg(dfnormal_ob, dfnormal_np, "NormalOB_vs_NormalNP")
+
+# Preview top 10 DEGs from first comparison
+head(deg_tumorNP_vs_normalNP, 10)
+```
+
+```{r, message=FALSE, warning=FALSE}
+# =====================================================
+# Create interactive volcano plots with plotly
+# =====================================================
+make_interactive_volcano <- function(deg_df, title) {
+  # Create ggplot with gene labels for tooltip
+  p <- ggplot(deg_df, aes(
+    x = log2FC,
+    y = negLog10P,
+    color = significance,
+    text = paste(
+      "Gene:", gene,
+      "<br>log2FC:", round(log2FC, 3),
+      "<br>p-value:", signif(10^(-negLog10P), 3)
+    )
+  )) +
+    geom_point(alpha = 0.8) +
+    #geom_vline(xintercept = c(-1, 1), linetype = "dashed", color = "gray40") +
+    geom_vline(xintercept = c(-fc_thresh, fc_thresh), linetype = "dashed", color = "gray40") +
+    #geom_hline(yintercept = -log10(0.05), linetype = "dashed", color = "gray40") +
+    geom_hline(yintercept = p_thresh, linetype = "dashed", color = "gray40") +
+    scale_color_manual(values = c("Up" = "red", "Down" = "blue", "NS" = "gray")) +
+    theme_minimal() +
+    labs(
+      title = title,
+      x = "log2(Fold Change)",
+      y = "-log10(p-value)",
+      color = "Significance"
+    )
+
+  # Convert to interactive plotly plot
+  ggplotly(p, tooltip = "text")
+}
+
+# Generate interactive volcano plots for all contrasts
+volcano1 <- make_interactive_volcano(deg_tumorNP_vs_normalNP$deg, "Tumor/Non-obese vs Normal/Non-obese")
+volcano2 <- make_interactive_volcano(deg_tumorOB_vs_normalOB$deg, "Tumor/Obese vs Normal/Obese")
+volcano3 <- make_interactive_volcano(deg_tumorOB_vs_tumorNP$deg, "Tumor/Obese vs Tumor/Non-obese")
+volcano4 <- make_interactive_volcano(deg_normalOB_vs_normalNP$deg, "Normal/Obese vs Normal/Non-obese")
+
+# Display interactive plots
+volcano1
+volcano2
+volcano3
+volcano4
+```
+
+## Enrichment
+
+```{r, message=FALSE, warning=FALSE}
+# =====================================================
+# Functional enrichment analysis and interactive plot
+# =====================================================
+
+# -------------------------------
+# Example list of genes
+# -------------------------------
+genes <- c(
+  "MIR24.2", "MIR186", "MIR100", "C21orf94", "LOC285456",
+  "SNORD115.38", "SNORD113.4", "MIR19B2", "SUMO1", "TPTE2P3",
+  "ZNF443", "SNORD115.8", "IFIT1", "MIR222", "SNORD116.18",
+  "SNORD37", "PLAC4", "DKFZp686O24166", "IFI44L"
+)
+
+# -------------------------------
+# Functional enrichment using g:Profiler
+# -------------------------------
+gostres <- gost(
+  query = genes,            # Input gene list
+  organism = "hsapiens",    # Human genes
+  significant = TRUE,       # Only return significant terms
+  correction_method = "fdr" # Multiple testing correction method
+)
+
+# -------------------------------
+# Prepare data for plotting
+# -------------------------------
+# Create a tooltip column showing gene names or number of genes
+if("intersection" %in% colnames(gostres$result)){
+  gostres$result$genes_text <- gostres$result$intersection
+} else {
+  gostres$result$genes_text <- paste("Number of genes:", gostres$result$intersection_size)
+}
+
+# Remove duplicates and select top terms
+df <- gostres$result %>%
+  group_by(term_name) %>%               # Group by term
+  slice_min(p_value, n = 1) %>%        # Keep term with lowest p-value if duplicated
+  ungroup() %>%
+  arrange(p_value) %>%                  # Sort by p-value
+  slice(1:20) %>%                       # Take top 20 terms (can adjust to top 15)
+  mutate(
+    term_name = factor(term_name, levels = rev(term_name)), # Reverse order for plotting
+    logp = -log10(p_value)                                # Convert p-value to -log10 scale
+  )
+
+# -------------------------------
+# Create interactive bar plot with plotly
+# -------------------------------
+library(ggplot2)
+library(plotly)
+
+p <- ggplot(df, aes(
+      x = term_name,                    # Term names on y-axis (will flip coordinates)
+      y = logp,                         # -log10(p-value) on x-axis
+      fill = source,                     # Color by enrichment source (GO, KEGG, etc.)
+      size = intersection_size,          # Size of bars proportional to number of genes
+      text = paste0("Genes: ", genes_text, "<br>",
+                    "p-value: ", signif(p_value,3))       # Tooltip text
+    )) +
+  geom_bar(stat = "identity") +          # Create bar plot
+  coord_flip() +                         # Flip coordinates for horizontal bars
+  scale_fill_brewer(palette = "Set2") + # Set color palette
+  scale_size_continuous(range = c(3,8)) + # Adjust size of points
+  xlab("") +
+  ylab("-log10(p-value)") +
+  ggtitle("Top 15 enriched terms") +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_text(size = 10),
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 9),
+    plot.title = element_text(size = 16, hjust = 0.5),
+    plot.margin = margin(t = 1, r = 2, b = 1, l = 2, unit = "cm")  # top, right, bottom, left
+  )
+
+# Convert to interactive plotly plot and adjust layout
+ggplotly(p, tooltip = "text") %>%
+  layout(
+    margin = list(l = 120, r = 150, t = 100, b = 50), # left, right, top, bottom
+    legend = list(font = list(size = 10))
+  )
+
+
+```
