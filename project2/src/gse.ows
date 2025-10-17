@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="" description="">
+	<nodes>
+		<node id="0" name="GEO SOFT Extractor" qualified_name="orange3biosci.widgets.geo_soft_extractor.OWGeoSoftExtractor" project_name="orange-biosci" version="" title="GEO SOFT Extractor" position="(197.0, 290.0)" />
+		<node id="1" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table" position="(347.0, 290.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="literal">{'controlAreaVisible': True, 'sample_substrings': '', 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01\xb8\x00\x00\x019\x00\x00\x06=\x00\x00\x03n\x00\x00\x01\xc6\x00\x00\x01j\x00\x00\x06/\x00\x00\x03]\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x01\xc6\x00\x00\x01j\x00\x00\x06/\x00\x00\x03]', 'soft_file_path': '/home/workpc/Documents/repos/datasci4health/project2/data/external/GSE79021_family.soft', 'transform_log2': False, '__version__': 1}</properties>
+		<properties node_id="1" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x00;\x00\x00\x00\x99\x00\x00\x06m\x00\x00\x03\x97\x00\x00\x00;\x00\x00\x00\x99\x00\x00\x06m\x00\x00\x03\x97\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x00;\x00\x00\x00\x99\x00\x00\x06m\x00\x00\x03\x97', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [], '__version__': 1}</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>
