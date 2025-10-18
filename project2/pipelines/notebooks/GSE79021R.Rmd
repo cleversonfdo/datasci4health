@@ -1,6 +1,6 @@
 ```{r, message=FALSE, warning=FALSE}
 # =====================================================
-# Chunk 1: Setup environment and load packages
+# Setup environment and load packages
 # =====================================================
 
 setup_environment <- function() {
@@ -20,7 +20,7 @@ setup_environment()
 
 ```{r, message=FALSE, warning=FALSE}
 # =====================================================
-# Chunk 2: Load GEO dataset
+# Load GEO dataset
 # =====================================================
 
 load_geo_dataset <- function(filename) {
@@ -32,7 +32,7 @@ gse <- load_geo_dataset("../../data/external/GSE79021_family.soft.gz")
 
 ```{r, message=FALSE, warning=FALSE}
 # =====================================================
-# Chunk 3: Extract single sample data
+# Extract single sample data
 # =====================================================
 
 extract_sample_data <- function(sample) {
@@ -59,7 +59,7 @@ return(df)
 
 ```{r, message=FALSE, warning=FALSE}
 # =====================================================
-# Chunk 4: Combine all samples into wide dataframe
+# Combine all samples into wide dataframe
 # =====================================================
 
 combine_samples <- function(gse) {
@@ -85,7 +85,7 @@ head(raw_data)
 
 ```{r, message=FALSE, warning=FALSE}
 # =====================================================
-# Chunk 5: Subset dataset by tissue type and BMI
+# Subset dataset by tissue type and BMI
 # =====================================================
 
 subset_by_group_bmi <- function(df, tissue_type, bmi_cutoff, obese = TRUE) {
@@ -119,7 +119,7 @@ head(dfnormal_ob)
 
 ```{r, message=FALSE, warning=FALSE}
 # =====================================================
-# Chunk 6: Calculate DEGs and generate volcano plots
+# Calculate DEGs and generate volcano plots
 # =====================================================
 
 calc_deg <- function(df1, df2, contrast_name, fc_thresh = 0.30103, p_thresh = -log10(0.05)) {
@@ -193,7 +193,7 @@ head(deg_tumorNP_vs_normalNP$deg)
 
 ```{r, message=FALSE, warning=FALSE}
 # =====================================================
-# Chunk 7: Generate interactive volcano plots
+# Generate interactive volcano plots
 # =====================================================
 
 make_interactive_volcano <- function(deg_df, title, fc_thresh, p_thresh) {
@@ -240,8 +240,8 @@ export_deg_sets <- function(deg_obj, tag, top_n = 300){
   down <- deg_df |> dplyr::filter(log2FC < -fc_thresh_color & negLog10P > cutP) |> dplyr::arrange(log2FC)
 
   # STRING lists
-  writeLines(head(up$gene,   top_n), paste0("STRING_genes_UP_",   tag, ".txt"))
-  writeLines(head(down$gene, top_n), paste0("STRING_genes_DOWN_", tag, ".txt"))
+  writeLines(head(up$gene,   top_n), paste0("../../data/interim/STRING_genes_UP_",   tag, ".txt"))
+  writeLines(head(down$gene, top_n), paste0("../../data/interim/STRING_genes_DOWN_", tag, ".txt"))
 
   # Nodes for Cytoscape
   nodes <- dplyr::mutate(deg_df,
@@ -252,7 +252,7 @@ export_deg_sets <- function(deg_obj, tag, top_n = 300){
                          )) |>
            dplyr::select(name = gene, logFC = log2FC, DE_class) |>
            dplyr::distinct(name, .keep_all = TRUE)
-  readr::write_csv(nodes, paste0("NODES_for_Cytoscape_", tag, ".csv"))
+  readr::write_csv(nodes, paste0("../../data/interim/NODES_for_Cytoscape_", tag, ".csv"))
 
   cat("\n[", tag, "] Up:", nrow(up), " Down:", nrow(down),
       " (cutoffs: |log2FC|>", fc_thresh_color, ", p<", p_thresh_color,")\n")
@@ -267,7 +267,7 @@ export_deg_sets(deg_normalOB_vs_normalNP, "NormalOB_vs_NormalNP")
 
 ```{r, message=FALSE, warning=FALSE}
 # =====================================================
-# Chunk 8: Functional enrichment analysis
+# Functional enrichment analysis
 # =====================================================
 
 perform_enrichment <- function(genes, top_n=15) {
