@@ -227,6 +227,11 @@ volcano4
 # =====================================================
 # Export top lists for STRING (symbols) and nodes for Cytoscape
 # =====================================================
+# --- Global thresholds used across plots/exports ---
+fc_thresh_color <- 0.30103   # |log2FC| >= 0.3
+p_thresh_color  <- 0.05      # p < 0.05
+p_thresh_line   <- -log10(p_thresh_color)  # ≈ 1.301 (visual guide line)
+
 export_deg_sets <- function(deg_obj, tag, top_n = 300){
   # Detect if it's a list returned by calc_deg()
   if (is.list(deg_obj) && "deg" %in% names(deg_obj)) {
