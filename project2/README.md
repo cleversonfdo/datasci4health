@@ -39,7 +39,7 @@ __Hipóteses__
 
 - Um score de assinatura derivado dos genes diferencialmente expressos estará associado a pior prognóstico clínico (p. ex. maiores escores de Gleason, estádios mais avançados e menor sobrevida livre de progressão).
 
-# Bases de Dados
+# Bases de Dados e Evolução
 
 
 Base de Dados | Endereço na Web | Resumo descritivo
@@ -50,6 +50,9 @@ The Cancer Genome Atlas Program (TCGA) | https://portal.gdc.cancer.gov/ | Consó
 # Modelo Lógico
 
 > ![Modelo Lógico de Grafos](assets/images/modelo_logico.png)
+
+# Integração entre Bases
+Em função do trabalho estar relacionado a um tema pouco explorado, a disponibilidade de estudos e datasets que envolvem cancer de próstata e índice de massa corpórea é bastante limitada. Como parte do trabalho para a etapa final o grupo irá investigar a disponiblidade de dados em novas fontes. Uma última alternativa seria, a partir da base de dados disponível até o momento com dados de índice de massa corpórea, sintetizar os dados faltantes para fins didáticos a partir de algum algoritmo de machine learning.
 
 # Metodologia
 1. Para  obtenção dos dados serão utilizados datasets públicos de expressão gênica disponíveis em repositórios internacionais como TCGA (PRAD), GEO e cBioPortal, que reúnem dados moleculares e clínicos de pacientes com câncer de próstata.
