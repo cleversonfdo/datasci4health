@@ -45,7 +45,6 @@ __Hipóteses__
 Base de Dados | Endereço na Web | Resumo descritivo
 ----- | ----- | -----
 Gene Expression Omnibus (GEO) | https://www.ncbi.nlm.nih.gov/gds | Base pública do NCBI que armazena dados de expressão gênica e outros experimentos de alto rendimento, permitindo acesso a estudos de transcriptômica em diversas condições biológicas e doenças.
-The Cancer Genome Atlas Program (TCGA) | https://portal.gdc.cancer.gov/ | Consórcio internacional que reúne dados multi-ômicos de diferentes tipos de câncer, incluindo genômica, transcriptômica, epigenética e clínica, para apoiar a pesquisa em oncologia e medicina de precisão.
 
 1. Os dados utilizados foram extraídos do estudo *Gene expression profiling of human prostate tumors identifies chromatin remodeling as a molecular link between obesity and lethal prostate cancer*. O accession number dos dataset com as amostras é GSE79021.
 2. As amostras foram extraídas e criados quatro grupos. Dois grupos com tecido prostático tumoral de indivíduos obesos e não obesos, e outros dois grupos com teciso prostático saudável de indivíduos obesos e não obesos.
@@ -60,11 +59,21 @@ Tumoral Obeso x Normal Obeso | 41  | 64
 Tumoral Obeso x Tumoral Normopeso | 3  | 9  
 Normal Obeso x Normla Normopeso | 12 | 27
 
-O gráfico de vulcão a seguir ilustra a comparção de diferença de expressão gênica para o grupo Tumoral Obeso x Tumoral Normopeso. A linha tracejada horizontal representa o *treshold* do pvalor e as linhas tracejadas na vertical os *tresholds* positivo e negativo do *FoldChange*.
+Os gráficos de vulcão a seguir ilustram a comparção de diferença de expressão gênica para os diferentes grupos de expressão. A linha tracejada horizontal representa o *treshold* do pvalor e as linhas tracejadas na vertical os *tresholds* positivo e negativo do *FoldChange*.
 
+## Normal Obeso x Normal Normopeso
 > ![Gráfico de Vulcão](assets/images/Volcano_TumorOB_vs_NormalOB.png)
 
-O grafo apresenta a maior sub-rede extraída da rede original de interações do grupo Normal Obeso vs Tumoral Obeso, é composta por 185 nós e 313 arestas, conforme os parâmetros de análise de rede obtidos no Cytoscape. Essa sub-rede teve a cor dos nós alteradas conforme as comunidades Leiden identificadas, os resultados são representados pela coloração que varia do amarelo ao roxo, em um gradiente contínuo que reflete os diferentes clusters formados.
+## Tumoral Normopeso x Normal Normopeso
+> ![Gráfico de Vulcão](assets/images/Volcano_TumorNP_vs_NormalNP.png)
+
+## Tumoral Obeso x Normal Obeso
+> ![Gráfico de Vulcão](assets/images/Volcano_TumorOB_vs_NormalOB.png)
+
+## Tumoral Obeso x Normal Normopeso
+> ![Gráfico de Vulcão](assets/images/Volcano_TumorOB_vs_TumorNP.png)
+
+Os grafos apresentam a maior sub-rede extraída da rede original de interações dos respectibos grupos de diferencial de expressão gênica. Essa sub-rede teve a cor dos nós alteradas conforme as comunidades Leiden identificadas, os resultados são representados pela coloração que varia do amarelo ao roxo, em um gradiente contínuo que reflete os diferentes clusters formados.
 
 O tamanho e o alongamento dos nós estão proporcionais ao valor de Betweenness Centrality, indicando a importância topológica de cada gene (ou proteína) como intermediário no fluxo de informação dentro da rede. Assim, nós mais alongados correspondem a vértices que desempenham papel de pontes entre diferentes regiões da rede, sendo potenciais nós-chave de comunicação entre módulos funcionais.
 
@@ -72,7 +81,17 @@ Observando-se as arestas, a espessura está associada ao parâmetro Edge Between
 
 Visualmente, é possível observar que a sub-rede contém regiões centrais altamente conectadas, com maior densidade de nós e arestas, além de módulos periféricos mais esparsos. Esses padrões refletem a estrutura modular típica de redes biológicas, nas quais poucos nós de alta centralidade conectam grupos funcionalmente correlacionados.
 
+## Normal Obeso x Normal Normopeso
+> ![Grafo Grupo TumorOB vc NormalOB](assets/images/normal_ob_x_normal_np.png)
+
+## Tumoral Obeso x Normal Obeso
 > ![Grafo Grupo TumorOB vc NormalOB](assets/images/tumor_ob_x_normal_ob.png)
+
+## Tumoral Obeso x Tumoral Normopeso
+> ![Grafo Grupo TumorOB vc NormalOB](assets/images/tumor_ob_x_tumor_np.png)
+
+## Tumoral Normopeso x Normal Normopeso
+> ![Grafo Grupo TumorOB vc NormalOB](assets/images/tunor_np_x_normal_np.png)
 
 # Modelo Lógico
 
