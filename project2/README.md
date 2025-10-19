@@ -62,7 +62,18 @@ Normal Obeso x Normla Normopeso | 12 | 27
 
 O gráfico de vulcão a seguir ilustra a comparção de diferença de expressão gênica para o grupo Tumoral Obeso x Tumoral Normopeso. A linha tracejada horizontal representa o *treshold* do pvalor e as linhas tracejadas na vertical os *tresholds* positivo e negativo do *FoldChange*.
 
-> ![Modelo Lógico de Grafos](assets/images/Volcano_TumorOB_vs_NormalOB.png)
+> ![Gráfico de Vulcão](assets/images/Volcano_TumorOB_vs_NormalOB.png)
+
+O grafo apresenta a maior sub-rede extraída da rede original de interações do grupo Normal Obeso vs Tumoral Obeso, é composta por 185 nós e 313 arestas, conforme os parâmetros de análise de rede obtidos no Cytoscape. Essa sub-rede teve a cor dos nós alteradas conforme as comunidades Leiden identificadas, os resultados são representados pela coloração que varia do amarelo ao roxo, em um gradiente contínuo que reflete os diferentes clusters formados.
+
+O tamanho e o alongamento dos nós estão proporcionais ao valor de Betweenness Centrality, indicando a importância topológica de cada gene (ou proteína) como intermediário no fluxo de informação dentro da rede. Assim, nós mais alongados correspondem a vértices que desempenham papel de pontes entre diferentes regiões da rede, sendo potenciais nós-chave de comunicação entre módulos funcionais.
+
+Observando-se as arestas, a espessura está associada ao parâmetro Edge Betweenness, que quantifica o número de caminhos mais curtos que passam por uma determinada aresta. Desse modo, arestas mais espessas indicam interações críticas para a conectividade geral da rede, representando potenciais rotas preferenciais de comunicação entre clusters distintos.
+
+Visualmente, é possível observar que a sub-rede contém regiões centrais altamente conectadas, com maior densidade de nós e arestas, além de módulos periféricos mais esparsos. Esses padrões refletem a estrutura modular típica de redes biológicas, nas quais poucos nós de alta centralidade conectam grupos funcionalmente correlacionados.
+
+> ![Grafo Grupo TumorOB vc NormalOB](assets/images/tumor_ob_x_normal_ob.png)
+
 # Modelo Lógico
 
 > ![Modelo Lógico de Grafos](assets/images/modelo_logico.png)
