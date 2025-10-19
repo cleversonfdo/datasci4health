@@ -64,11 +64,8 @@ Baseados no *dataset* utilizado foi identificada a variações de nível de expr
 GRupos Analisados | Quantitativos de Genes *Upregulated* | Quantitativos de Genes *Downregulated*
 ----- | ----- | -----
 Tumoral Normopeso x Normal Normopero | 10  | 8  
-
 Tumoral Obeso x Normal Obeso | 41  | 64 
-
 Tumoral Obeso x Tumoral Normopeso | 3  | 9  
-
 Normal Obeso x Normla Normopeso | 12 | 27
 
 # Metodologia
