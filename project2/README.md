@@ -47,6 +47,9 @@ Base de Dados | Endereço na Web | Resumo descritivo
 Gene Expression Omnibus (GEO) | https://www.ncbi.nlm.nih.gov/gds | Base pública do NCBI que armazena dados de expressão gênica e outros experimentos de alto rendimento, permitindo acesso a estudos de transcriptômica em diversas condições biológicas e doenças.
 The Cancer Genome Atlas Program (TCGA) | https://portal.gdc.cancer.gov/ | Consórcio internacional que reúne dados multi-ômicos de diferentes tipos de câncer, incluindo genômica, transcriptômica, epigenética e clínica, para apoiar a pesquisa em oncologia e medicina de precisão.
 
+1. Os dados utilizados foram extraídos do estudo *Gene expression profiling of human prostate tumors identifies chromatin remodeling as a molecular link between obesity and lethal prostate cancer*. O accession number dos dataset com as amostras é GSE79021.
+2. As amostras foram extraídas e criados quatro grupos. Dois grupos com tecido prostático tumoral de indivíduos obesos e não obesos, e outros dois grupos com teciso prostático saudável de indivíduos obesos e não obesos.
+
 # Modelo Lógico
 
 > ![Modelo Lógico de Grafos](assets/images/modelo_logico.png)
