@@ -58,6 +58,19 @@ The Cancer Genome Atlas Program (TCGA) | https://portal.gdc.cancer.gov/ | Consó
 # Integração entre Bases
 Em função do trabalho estar relacionado a um tema pouco explorado, a disponibilidade de estudos e datasets que envolvem cancer de próstata e índice de massa corpórea é bastante limitada. Como parte do trabalho para a etapa final o grupo irá investigar a disponiblidade de dados em novas fontes. Uma última alternativa seria, a partir da base de dados disponível até o momento com dados de índice de massa corpórea, sintetizar os dados faltantes para fins didáticos a partir de algum algoritmo de machine learning.
 
+# Integração entre Bases
+Baseados no *dataset* utilizado foi identificada a variações de nível de expressão gênica siginificativas em diversos genes. Considerando os *tresholds* utilizado para o FoldChange em 0.30103 e para o p-valor 0.05, foram identificados as seguintes quantidades de genes siginificantes:
+
+GRupos Analisados | Quantitativos de Genes *Upregulated* | Quantitativos de Genes *Downregulated*
+**** | **** | ****
+Tumoral Normopeso x Normal Normopero | 10  | 8  
+
+Tumoral Obeso x Normal Obeso | 41  | 64 
+
+Tumoral Obeso x Tumoral Normopeso | 3  | 9  
+
+Normal Obeso x Normla Normopeso | 12 | 27
+
 # Metodologia
 1. Para  obtenção dos dados serão utilizados datasets públicos de expressão gênica disponíveis em repositórios internacionais como TCGA (PRAD), GEO e cBioPortal, que reúnem dados moleculares e clínicos de pacientes com câncer de próstata.
 2. Pré-processamento e controle de qualidade:
