@@ -62,7 +62,7 @@ Em função do trabalho estar relacionado a um tema pouco explorado, a disponibi
 Baseados no *dataset* utilizado foi identificada a variações de nível de expressão gênica siginificativas em diversos genes. Considerando os *tresholds* utilizado para o FoldChange em 0.30103 e para o p-valor 0.05, foram identificados as seguintes quantidades de genes siginificantes:
 
 GRupos Analisados | Quantitativos de Genes *Upregulated* | Quantitativos de Genes *Downregulated*
-**** | **** | ****
+----- | ----- | -----
 Tumoral Normopeso x Normal Normopero | 10  | 8  
 
 Tumoral Obeso x Normal Obeso | 41  | 64 
