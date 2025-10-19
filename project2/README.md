@@ -49,6 +49,7 @@ The Cancer Genome Atlas Program (TCGA) | https://portal.gdc.cancer.gov/ | Consó
 
 1. Os dados utilizados foram extraídos do estudo *Gene expression profiling of human prostate tumors identifies chromatin remodeling as a molecular link between obesity and lethal prostate cancer*. O accession number dos dataset com as amostras é GSE79021.
 2. As amostras foram extraídas e criados quatro grupos. Dois grupos com tecido prostático tumoral de indivíduos obesos e não obesos, e outros dois grupos com teciso prostático saudável de indivíduos obesos e não obesos.
+3. No grupo de controle normopeso foram extraídas 46 amostras e para o obeso 3 amostras, já para o grupo tumoral foram extraídas 143 amostras de indívíduos normo peso e 10 amostras para obesos.
 
 # Modelo Lógico
 
