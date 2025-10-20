@@ -101,7 +101,22 @@ Visualmente, é possível observar que a sub-rede contém regiões centrais alta
 Em função do trabalho estar relacionado a um tema pouco explorado, a disponibilidade de estudos e datasets que envolvem cancer de próstata e índice de massa corpórea é bastante limitada. Como parte do trabalho para a etapa final o grupo irá investigar a disponiblidade de dados em novas fontes. Uma última alternativa seria, a partir da base de dados disponível até o momento com dados de índice de massa corpórea, sintetizar os dados faltantes para fins didáticos a partir de algum algoritmo de machine learning.
 
 # Análise Preliminar
+A análise comparativa entre os diferentes grupos experimentais revelou assinaturas moleculares distintas associadas tanto ao estado tumoral quanto à obesidade, evidenciando interações contextuais entre metabolismo, sinalização celular e progressão tumoral.
 
+Nos contrastes envolvendo tecidos tumorais (TumorNP vs NormalNP e TumorOB vs TumorNP), observou-se a conservação de genes hub centrais como PIK3CB, ITGB3 e RBBP4, os quais participam de módulos críticos de sinalização e regulação epigenética. A manutenção desses hubs sugere uma arquitetura de rede estável relacionada à progressão tumoral, independente da condição metabólica, reforçando o papel de vias como PI3K/AKT, adesão celular e modificações de histonas na sobrevivência e proliferação das células prostáticas.
+
+Por outro lado, os contrastes envolvendo tecidos normais (NormalOB vs NormalNP) apresentaram predominância de genes estruturais da matriz extracelular, como COL1A1, COL3A1 e COL4A1, além de VCAN, indicando que a obesidade induz uma remodelação tecidual associada ao microambiente prostático, possivelmente favorecendo processos pró-tumorais.
+
+A análise funcional pelo DAVID destacou o gene BMP5 como um dos principais reguladores diferencialmente expressos entre os grupos tumorais (TumorOB vs TumorNP). Esse gene, associado às vias Hippo, TGF-β e Wnt, está envolvido na regulação do crescimento e apoptose celular, e sua desregulação pode promover a progressão do câncer de próstata ao aumentar a proliferação e reduzir a morte celular.
+
+De modo geral, os achados indicam que:
+As diferenças tumorais predominam sobre os efeitos da obesidade, mas esta modula o contexto molecular do tecido normal, potencialmente alterando o microambiente prostático.
+
+As vias metabólicas e relacionadas ao câncer foram as mais frequentes entre os genes compartilhados, sugerindo um elo direto entre metabolismo e progressão tumoral.
+
+Não houve sobreposição de genes entre tecidos normais e tumorais (num contexto OBvsNP), reforçando a natureza dependente do contexto tecidual na resposta à obesidade.
+
+Esses resultados sugerem uma possível influência de fatores metabólicos na modulação de vias relacionadas ao câncer de próstata, mas sem evidências suficientes para estabelecer uma relação causal direta. O gene BMP5 e os hubs identificados (PIK3CB, ITGB3 e RBBP4) podem representar pontos de interesse para análises futuras, considerando suas funções em sinalização celular e regulação epigenética. No entanto, são necessários estudos adicionais para confirmar se essas alterações têm papel funcional relevante na interface entre obesidade e progressão tumoral prostática.
 
 # Metodologia
 1. Para  obtenção dos dados serão utilizados datasets públicos de expressão gênica disponíveis em repositórios internacionais como TCGA (PRAD), GEO e cBioPortal, que reúnem dados moleculares e clínicos de pacientes com câncer de próstata.
