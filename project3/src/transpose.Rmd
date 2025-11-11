@@ -1,0 +1,43 @@
+---
+title: "Transpose"
+output: html_document
+date: "2025-10-27"
+---
+
+```{r setup, include=FALSE}
+transpose_files <- function(file_list) {
+  for (file in file_list) {
+    # Ler arquivo
+    df <- read.csv(file, header = TRUE, stringsAsFactors = FALSE)
+    
+    # Usar a primeira coluna como nomes das linhas
+    rownames(df) <- df[[1]]
+    df[[1]] <- NULL
+    
+    # Transpor
+    df_t <- as.data.frame(t(df))
+    
+    # Restaurar nomes
+    df_t <- cbind(Feature_name = rownames(df_t), df_t)
+    rownames(df_t) <- NULL
+    
+    # Gerar novo nome de arquivo
+    file_out <- sub("(\\.csv)$", "_transp\\1", file)
+    
+    # Salvar novo arquivo
+    write.csv(df_t, file_out, row.names = FALSE)
+    
+    cat("Arquivo gerado:", file_out, "\n")
+  }
+}
+
+```
+
+```{r setup, include=FALSE}
+# Exemplo de lista de arquivos
+arquivos <- c("tumor_obese.csv", "normal_obese.csv", "tumor_nonobese.csv",  "normal_nonobese.csv")
+
+# Chamar a função
+transpose_files(arquivos)
+
+```

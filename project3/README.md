@@ -1,6 +1,8 @@
 # Projeto `Clusters de coexpressão gênica em pacientes com câncer de próstata com e sem obesidade: impactos na progressão tumoral`
 # Project `Gene Expression Clusters in Prostate Cancer Patients With and Without Obesity: Impacts on Tumor Progression`
 
+project 3 
+
 # Descrição Resumida do Projeto
 
 A obesidade é uma condição metabólica caracterizada pelo acúmulo excessivo de gordura corporal, especialmente a visceral, e está associada a inflamação crônica, alterações hormonais e disfunções metabólicas. Essa condição tem se tornado um dos maiores problemas de saúde pública no mundo, com projeções de crescimento alarmantes nas próximas décadas.
@@ -133,7 +135,6 @@ Esses resultados sugerem uma possível influência de fatores metabólicos na mo
 * Análise da topologia da rede em Cytoscape para determinar genes centrais e clusters de coexpressão relevantes.
 * Seleção de genes candidatos para validação posterior.
 6. Validação clínica no TCGA
-
 
 
 # Ferramentas
