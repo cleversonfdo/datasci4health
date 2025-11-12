@@ -79,7 +79,11 @@ Os grafos apresentam a maior sub-rede extraída da rede original de interações
 
 O tamanho e o alongamento dos nós estão proporcionais ao valor de Betweenness Centrality, indicando a importância topológica de cada gene (ou proteína) como intermediário no fluxo de informação dentro da rede. Assim, nós mais alongados correspondem a vértices que desempenham papel de pontes entre diferentes regiões da rede, sendo potenciais nós-chave de comunicação entre módulos funcionais.
 
-Observando-se as arestas, a espessura está associada ao parâmetro Edge Betweenness, que quantifica o número de caminhos mais curtos que passam por uma determinada aresta. Desse modo, arestas mais espessas indicam interações críticas para a conectividade geral da rede, representando potenciais rotas preferenciais de comunicação entre clusters distintos.
+Observando-se as arestas, a espessura está associada ao parâmetro Edge Betweenness, que quantifica o número de caminhos mais curtos que passam por uma determinada aresta. Desse modo, arestas mais espessas indicam interações críticas para a conectividade geral da rede, represe# Projeto `Clusters de coexpressão gênica em pacientes com câncer de próstata com e sem obesidade: impactos na progressão tumoral`
+# Project `Gene Expression Clusters in Prostate Cancer Patients With and Without Obesity: Impacts on Tumor Progression`
+
+Para a execução do arquivo .cys é necessária a instalação do software cytoscape com as extensões clusterMaker2 (v.2.3.4) e CytoNCA (v.2.1.6). O arquivo de extensão .ows é originário do software Orange, sendo necessário para sua excução a instalação dos plugins biosci e Bioinformatics.
+ntando potenciais rotas preferenciais de comunicação entre clusters distintos.
 
 Visualmente, é possível observar que a sub-rede contém regiões centrais altamente conectadas, com maior densidade de nós e arestas, além de módulos periféricos mais esparsos. Esses padrões refletem a estrutura modular típica de redes biológicas, nas quais poucos nós de alta centralidade conectam grupos funcionalmente correlacionados.
 
