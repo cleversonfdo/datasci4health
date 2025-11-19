@@ -147,6 +147,14 @@ Em paralelo, o **ShinyGO** foi empregado para gerar as visualizações gráficas
 
 ## Evolução do Projeto
 
+Ao longo do desenvolvimento do projeto, os primeiros avanços ocorreram no entendimento e na organização dos dados de expressão gênica obtidos do GEO. Essa etapa teve como objetivo identificar corretamente quais amostras pertenciam a pacientes obesos, não obesos, tumorais ou saudáveis, além de aplicar critérios estatísticos para selecionar apenas os genes que apresentavam alterações de expressão gênica significativas. Essa fase teve foco majoritariamente conceitos computacionais, como filtragem de dados, padronização e preparação das bases para análises posteriores. 
+
+Os dados foram inicialmente extraídos do site GEO pelo Rstudio, porém a quantidade de genes extraídos não era suficiente para uma análise adequada das relações entre os genes das diferentes amostras. Além disso, o threshold do foldchange teria que ser muito baixo (menor que 0.3) para que um número significativo de genes fosse considerado como expressivos. Para esta etapa final do trabalho o Orange foi utilizado, sendo que uma inversão de log2 foi aplicada no bloco de extração (GEO Soft Extractor) nos valores de expressão gênica de cada gene, posteriormente as amostras foram separadas manualmente. A aplicação da inversão de log2 fez com que um maior número de genes tivessem um valor de foldchange mais expressivo durante os cálculos. 
+
+Em seguida, o projeto evoluiu para uma etapa mais analítica, na qual os genes selecionados foram utilizados para construir redes de interação. Nesse ponto, algoritmos de detecção de comunidades, medidas de centralidade e análise de grafos foram implementados como base de apoio ao entendimento do problema. Dessa forma, foi possível interpretar essas redes como sistemas complexos: os genes como “nós”, suas relações como “arestas” e as métricas computacionais auxiliando na identificação de quais elementos da rede são mais importantes.
+
+Por fim, o trabalho avançou para comparar os resultados obtidos nos diferentes grupos. Isso permitiu observar, por exemplo, que certas estruturas da rede permanecem semelhantes em todos os pacientes com câncer, enquanto outras diferenças aparecem apenas quando se compara obesos e não obesos.
+
 ### Base de Dados e Extração
 
 Os dados foram inicialmente extraídos do site GEO pelo Rstudio, porém a quantidade de genes extraídos não era suficiente para uma análise adequada das relações entre os genes das diferentes amostras. Além disso, o threshold do foldchange teria que ser muito baixo (menor que 0.3) para que um número significativo de genes fosse considerado como expressivos.
