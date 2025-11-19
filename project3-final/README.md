@@ -6,22 +6,24 @@
 **Contextualização do Projeto**
 
 O projeto investiga as redes de expressão gênica em tumores de próstata de indivíduos com e sem obesidade. Considerando que o câncer de próstata é o tipo mais prevalente e letal entre os homens brasileiros (excetuando-se os de pele não melanoma), e que a obesidade tem crescido de forma alarmante, busca-se compreender como o excesso de peso pode alterar mecanismos moleculares associados à progressão tumoral
-Caracterização do Problema
+caracterização do problema.
 
-Apesar de estudos anteriores indicarem possíveis associações entre obesidade e maior agressividade do câncer de próstata, os mecanismos biológicos que explicam essa relação permanecem controversos. O problema central é identificar se e como a obesidade modifica o padrão de expressão gênica tumoral, influenciando vias metabólicas e de progressão da doença
+Apesar de estudos anteriores indicarem possíveis associações entre obesidade e maior agressividade do câncer de próstata, os mecanismos biológicos que explicam essa relação permanecem controversos. O problema central é identificar se e como a obesidade modifica o padrão de expressão gênica tumoral, influenciando vias metabólicas e de progressão da doença.
 
 
 **Motivação**
 
 A pesquisa é motivada pela necessidade de compreender os efeitos moleculares da obesidade no câncer de próstata, visando identificar potenciais alvos terapêuticos e biomarcadores prognósticos. Além disso, o estudo contribui para a medicina de precisão, buscando relacionar condições metabólicas ao comportamento tumoral
-Relevância
+
+**Relevância**
 
 Os achados têm relevância clínica e social, pois podem explicar diferenças na evolução da doença entre pacientes obesos e não obesos, além de orientar estratégias terapêuticas mais eficazes. A identificação de genes e vias alteradas pela obesidade pode levar ao desenvolvimento de terapias personalizadas e ao aprimoramento do prognóstico.
 
 **Trabalhos Relacionados**
 
 O projeto apoia-se em estudos que descrevem a influência da obesidade sobre o microambiente tumoral e a expressão de genes relacionados ao metabolismo e inflamação (SAHA; KOLONIN; DIGIOVANNI, 2023; FERRO et al., 2017). Pesquisas recentes também relacionam o papel do citocromo P450, metabolismo do retinol e regulação de miRNAs à progressão tumoral em contextos obesogênicos.
-Análise Proposta
+
+**Análise Proposta**
 
 O estudo utilizou dados públicos do Gene Expression Omnibus (GSE79021) e ferramentas como Orange, STRING, Cytoscape e DAVID para comparar a expressão gênica entre grupos de tumores de pacientes obesos e não obesos. Foram identificados 38 genes diferencialmente expressos, dos quais 31 estavam up-regulados, especialmente em vias de metabolismo de xenobióticos, fármacos e retinol.
 
@@ -32,7 +34,6 @@ Os resultados revelaram que o gene UGT2B4 está significativamente superexpresso
 # Slides
 
 [PDF Slides](assets/slides/Gene-Expression-Networks-in-Prostate-Cancer-With-and-Without-Obesity_.pdf)
-
 
 # Fundamentação Teórica
 
@@ -60,7 +61,7 @@ Outros estudos também mostraram que características corporais, como menor rela
 
 Apesar dessas observações, as evidências sobre o papel da obesidade no risco global de desenvolvimento do câncer de próstata permanecem contraditórias. Alguns estudos relatam uma associação inversa entre obesidade e o risco de tumores de baixo grau, sugerindo que o excesso de peso poderia reduzir a incidência geral da doença. Em contrapartida, um estudo norueguês de grande escala, que acompanhou quase um milhão de homens durante 21 anos, mostrou que indivíduos com IMC superior a 30 kg/m² apresentaram aumento de 9% no risco de câncer de próstata em comparação com aqueles com peso dentro da faixa considerada normal. Esse risco foi ainda mais acentuado entre homens obesos com idades entre 50 e 59 anos, alcançando um aumento de 58%. Por outro lado, resultados obtidos em uma população americana sugerem que o risco da doença diminui com o aumento do IMC em homens mais jovens ou com histórico familiar positivo, reforçando a complexidade dessa relação.
 
-Diversas hipóteses tentam explicar o possível papel divergente da obesidade no desenvolvimento do câncer de próstAta. Uma delas propõe que, em homens jovens ou com predisposição hereditária, o excesso de peso poderia exercer um efeito protetor devido à redução dos níveis de andrógenos, frequentemente observada em indivíduos obesos. Outra hipótese sugere que as discrepâncias entre estudos europeus e norte-americanos podem ser atribuídas à frequência de triagens por PSA, mais intensas nos Estados Unidos, que favorecem a detecção precoce da doença. Além disso, o aumento do volume plasmático em indivíduos obesos pode provocar hemodiluição e, consequentemente, níveis mais baixos de PSA, o que reduz a probabilidadede diagnóstico em estágios iniciais.
+Diversas hipóteses tentam explicar o possível papel divergente da obesidade no desenvolvimento do câncer de próstAta. Uma delas propõe que, em homens jovens ou com predisposição hereditária, o excesso de peso poderia exercer um efeito protetor devido à redução dos níveis de andrógenos, frequentemente observada em indivíduos obesos. Outra hipótese sugere que as discrepâncias entre estudos europeus e norte-americanos podem ser atribuídas à frequência de triagens por PSA, mais intensas nos Estados Unidos, que favorecem a detecção precoce da doença. Além disso, o aumento do volume plasmático em indivíduos obesos pode provocar hemodiluição e, consequentemente, níveis mais baixos de PSA, o que reduz a probabilidade de diagnóstico em estágios iniciais.
 
 A influência da raça também tem sido considerada um fator importante nessa relação. Estudos prospectivos indicam que a obesidade está mais fortemente associada ao aumento do risco de câncer de próstata em homens afro-americanos do que em homens brancos não hispânicos. Essa diferença pode refletir variações biológicas relacionadas à inflamação sistêmica, secreção de marcadores inflamatórios e níveis de insulina, além da interação com fatores genéticos específicos, como polimorfismos no receptor de andrógeno.
 
@@ -76,17 +77,12 @@ A obesidade/sobrepeso promove alterações no perfil de expressão gênica em tu
 
 **Hipóteses**
 - A obesidade altera o padrão de expressão gênica em tumores de pacientes com câncer de próstata, resultando em um conjunto distinto de genes diferencialmente expressos entre obesos/sobrepeso e normopeso.
-
-
 - Os genes diferencialmente expressos em tumores de pacientes obesos/sobrepeso estarão enriquecidos em vias relacionadas à inflamação, ao metabolismo e ao remodelamento do microambiente tumoral.
-
-
 - Um score de assinatura derivado dos genes diferencialmente expressos estará associado a pior prognóstico clínico (p. ex. maiores escores de Gleason, estádios mais avançados e menor sobrevida livre de progressão).
 
 # Metodologia
 
 ## Bases de Dados e Evolução
-
 
 | Base de Dados | Endereço na Web | Resumo descritivo |
 | :--- | :--- | :--- |
@@ -166,7 +162,7 @@ Por fim, o trabalho avançou para comparar os resultados obtidos nos diferentes 
 
 ## Redes de interação gênica nos subgrupos analisados
 
-As redes resultantes estão ilustradas nas Figuras XX a XX. Nas figuras, cada nó representa um gene diferencialmente expresso (DEG) e as arestas representam interações proteicas (PPI) obtidas a partir da base STRING. A escala de cores dos nós indica o valor de *closeness centrality*, enquanto o tamanho do nó é proporcional ao *degree*, ou seja, ao número de conexões que o gene possui dentro da rede.
+As redes resultantes estão ilustradas nas Figuras 1 e 2. Nas figuras, cada nó representa um gene diferencialmente expresso (DEG) e as arestas representam interações proteicas (PPI) obtidas a partir da base STRING. A escala de cores dos nós indica o valor de *closeness centrality*, enquanto o tamanho do nó é proporcional ao *degree*, ou seja, ao número de conexões que o gene possui dentro da rede.
 
 O fluxo de análise foi o seguinte:
 1.  Os dados processados no Orange foram exportados.
@@ -199,11 +195,11 @@ Esta rede apresenta uma estrutura moderadamente simples, composta por dois peque
 ![Grafo: Tumor obeso vs tumor não obeso](assets/images/Tumor_obeso_vs_tumor_nao_obeso.png)
 > *Figura 1. Grafo gerado no Cytoscape: Tumor obeso vs tumor não obeso*
 
-### Normal obeso vs normal no obeso
+### Normal obeso vs normal não obeso
 
-A rede mostra uma estrutura modular com um módulo central highly interconectado e vários subgrupos periféricos com menor conectividade.
+A rede mostra uma estrutura modular com um módulo central altamente interconectado e vários subgrupos periféricos com menor conectividade.
 
-* **Características estruturais:**
+**Características estruturais:**
     * O módulo principal é composto pelos genes *IFI44*, *IFI44L*, *MX1*, *IFIT1*, *IFITM1*, *IFI6*, *IRF1*, *PLSCR1*, *PARP9* e *HERC6*, que formam uma rede densa de interações.
     * Pequenas sub-redes isoladas (*PPP2CB–PPM1B*, *PDK4–HADHA*, *LMNA–EMP1*, *B3GNT5–MUC3A*, *B3GAT3–CSGALNACT1*) indicam regiões locais de interação.
 
@@ -229,7 +225,7 @@ Essa via representa uma subcategoria das rotas mediadas pelo citocromo P450 (CYP
 
 Esse desequilíbrio no metabolismo de fármacos pode impactar diretamente os resultados clínicos, especialmente em pacientes obesos, nos quais alterações inflamatórias e metabólicas influenciam a atividade das CYPs (Zarezadeh *et al.*, 2020). Dessa forma, a modulação da via de metabolismo de fármacos pelo citocromo P450 (CYP450) em tumores, particularmente em indivíduos obesos, pode afetar de maneira decisiva a farmacocinética, a eficácia e a resistência aos quimioterápicos (Pagoni, 2025).
 
-### Retinol metabolism
+### Retinol e metabolismo
 
 O retinol e seus derivados, como o ácido retinoico, desempenham papéis fundamentais na diferenciação celular, proliferação e sinalização nuclear por meio dos receptores RAR/RXR, sendo essenciais para a homeostase epitelial e a função imunológica (Lavudi *et al.*, 2023). No câncer de próstata, a via RBP4–STRA6 facilita o transporte de retinol de adipócitos para células prostáticas, sustentando a plasticidade das células basais e favorecendo a adaptação tumoral (Xu *et al.*, 2025). Esse mecanismo tende a ser intensificado em indivíduos obesos, devido ao maior volume de tecido adiposo periprostático.
 
@@ -239,26 +235,26 @@ Em conjunto, essas as vias *Metabolism of xenobiotics by cytochrome P450*, *Drug
 
 Para validar os achados iniciais de expressão e investigar o potencial oncogênico dos genes apontados no enriquecimento, conduzimos uma série de análises *in silico* utilizando bancos de dados genômicos e transcriptômicos publicamente disponíveis.
 
-Para validar o padrão de expressão desses genes no contexto do câncer de próstata, utilizou-se a plataforma UALCAN, que disponibiliza dados de transcriptômica do TCGA. A análise do perfil de expressão de *UGT2B7* e *ADH1C* no conjunto de dados PRAD (Prostate Adenocarcinoma) mostrou que estes genes são, de fato, *downregulados* no tecido tumoral em comparação com o tecido normal, um padrão inconsistente com um potencial oncogene, o que os torna de pouco interesse para análise atual. Dada esta incongruência, o foco da investigação foi direcionado ao *UGT2B4*, que, pela mesma análise no UALCAN, demonstrou uma clara *upregulation* significativa no tecido tumoral primário, corroborando nosso conjunto de dados inicial e alinhando-se com um possível papel promotor de tumor (Figura 4).
+Para validar o padrão de expressão desses genes no contexto do câncer de próstata, utilizou-se a plataforma UALCAN, que disponibiliza dados de transcriptômica do TCGA. A análise do perfil de expressão de *UGT2B7* e *ADH1C* no conjunto de dados PRAD (Prostate Adenocarcinoma) mostrou que estes genes são, de fato, *downregulados* no tecido tumoral em comparação com o tecido normal, um padrão inconsistente com um potencial oncogene, o que os torna de pouco interesse para análise atual. Dada esta incongruência, o foco da investigação foi direcionado ao *UGT2B4*, que, pela mesma análise no UALCAN, demonstrou uma clara *upregulation* significativa no tecido tumoral primário, corroborando nosso conjunto de dados inicial e alinhando-se com um possível papel promotor de tumor conforme Figura 4.
 
 ![Expressão UGT2B4 (Sample Type)](./assets/images/ugt2b4_prad_sample.png)
 > *Figura 4. Expressão de UGT2B4 em amostras normais.*
 
-Aprofundando a caracterização do *UGT2B4*, os dados do TCGA via UALCAN ainda revelaram que a sua expressão correlaciona-se positivamente com a agressividade do tumor, sendo notavelmente mais elevada em pacientes com escores de Gleason mais altos. Do ponto de vista clínico, essa alta expressão mostrou estar associada a um pior prognóstico, com uma análise de sobrevida global indicando um *Hazard Ratio* (HR) superior a 1. O que pode ser visto nos gráficos abaixo, Figura 5 e Figura 6.
+Aprofundando a caracterização do *UGT2B4*, os dados do TCGA via UALCAN ainda revelaram que a sua expressão correlaciona-se positivamente com a agressividade do tumor, sendo notavelmente mais elevada em pacientes com escores de Gleason mais altos. Do ponto de vista clínico, essa alta expressão mostrou estar associada a um pior prognóstico, com uma análise de sobrevida global indicando um *Hazard Ratio* (HR) superior a 1. O que pode ser visto nos gráficos abaixo.
 
 ![Expressão UGT2B4 (Gleason Score)](./assets/images/ugt2b4_prad_patientGleason.png)
 > *Figura 5. Expressão de UGT2B4 por escore de Gleason.*
 
-Para explorar o potencial do *UGT2B4* como um alvo terapêutico, foram consultados dados públicos de dependência celular gerados pelo projeto DepMap, os quais derivam de experimentos de alto rendimento de *knockout* com CRISPR. A interpretação dos "Gene Effect scores" indica que valores negativos significam que a inativação do gene compromete a viabilidade celular (Figura 7). Neste contexto, a maioria das linhagens de câncer de próstata analisadas apresentou scores negativos para *UGT2B4*. Especificamente, linhagens amplamente utilizadas como DU145, 22RV1, LNCaP e a linhagem de hiperplasia benigna BPH-1 exibiram os scores mais negativos, sugerindo uma forte dependência funcional da atividade de *UGT2B4*. Estes dados de consórcios independentes suportam a hipótese de que a inibição farmacológica do *UGT2B4* poderia ser uma estratégia terapêutica viável para subtipos de câncer de próstata.
+Para explorar o potencial do *UGT2B4* como um alvo terapêutico, foram consultados dados públicos de dependência celular gerados pelo projeto DepMap, os quais derivam de experimentos de alto rendimento de *knockout* com CRISPR. A interpretação dos "Gene Effect scores" indica que valores negativos significam que a inativação do gene compromete a viabilidade celular (Figura 6). Neste contexto, a maioria das linhagens de câncer de próstata analisadas apresentou scores negativos para *UGT2B4*. Especificamente, linhagens amplamente utilizadas como DU145, 22RV1, LNCaP e a linhagem de hiperplasia benigna BPH-1 exibiram os scores mais negativos, sugerindo uma forte dependência funcional da atividade de *UGT2B4*. Estes dados de consórcios independentes suportam a hipótese de que a inibição farmacológica do *UGT2B4* poderia ser uma estratégia terapêutica viável para subtipos de câncer de próstata.
 
 ![Gene Effect Scores UGT2B4](./assets/images/gene_effect_sc_prostCancer.png)
-> *Figura 7. Scores de Efeito Gênico (Dependência Celular) para UGT2B4 em linhagens de câncer de próstata (DepMap).*
+> *Figura 6. Scores de Efeito Gênico (Dependência Celular) para UGT2B4 em linhagens de câncer de próstata (DepMap).*
 
-Em um esforço para compreender os mecanismos que regulam a expressão de *UGT2B4*, uma análise *in silico* de regulação por miRNAs foi conduzida utilizando a ferramenta mirtarget. Os resultados indicaram que os miRNAs repressores de *UGT2B4* encontram-se significativamente menos expressos nos tumores. Esta supressão de miRNAs inibidores efetivamente remove um mecanismo de controle pós-transcricional, permitindo a acumulação de *UGT2B4*. Este achado fornece uma explicação mecanística plausível para a *upregulation* observada (Figura 8 A-D).
+Em um esforço para compreender os mecanismos que regulam a expressão de *UGT2B4*, uma análise *in silico* de regulação por miRNAs foi conduzida utilizando a ferramenta mirtarget. Os resultados indicaram que os miRNAs repressores de *UGT2B4* encontram-se significativamente menos expressos nos tumores. Esta supressão de miRNAs inibidores efetivamente remove um mecanismo de controle pós-transcricional, permitindo a acumulação de *UGT2B4*. Este achado fornece uma explicação mecanística plausível para a *upregulation* observada (Figura 7 A-D).
 
 ![Regulação miRNA (A-B)](./assets/images/fPlots_ab.png)
 ![Regulação miRNA (C-D)](./assets/images/fPlots_cd.png)
-> *Figura 8 (A-D). Análise de regulação de UGT2B4 por miRNAs.*
+> *Figura 7 (A-D). Análise de regulação de UGT2B4 por miRNAs.*
 
 Em síntese, este estudo identificou que o microambiente tumoral de pacientes obesos com câncer de próstata apresenta uma assinatura molecular única, caracterizada pela superexpressão de genes centrais ao metabolismo de xenobióticos e retinol. O gene *UGT2B4* destacou-se neste contexto, e análises de dados transcriptômicos e de dependência celular de domínio público validaram de forma convergente o seu papel na progressão do PRAD. Estas descobertas sugerem que a obesidade pode favorecer um contexto metabólico que seleciona para a superexpressão de *UGT2B4*, potencialmente contribuindo para uma biologia tumoral mais agressiva e abrindo perspectivas para o desenvolvimento de estratégias terapêuticas direcionadas.
 
@@ -270,17 +266,13 @@ Entre as vias mais enriquecidas, destacaram-se Metabolism of xenobiotics by cyto
 
 A via do citocromo P450 (CYP), em particular, mostrou-se central para compreender o elo entre obesidade e progressão tumoral. A literatura demonstra que o aumento da atividade dessas enzimas pode modificar a resposta a fármacos e promover resistência terapêutica, além de alterar o metabolismo de hormônios esteroides e carcinógenos (Mokhosoev et al., 2024; Bankoglu & Stopper, 2022). Neste estudo, a modulação dessa via em tumores de pacientes obesos sugere que o microambiente metabólico alterado pela obesidade pode contribuir para o surgimento de fenótipos mais agressivos e refratários ao tratamento
 
-
 Outro achado relevante foi a superexpressão do gene UGT2B4, corroborada por análises em bancos públicos (TCGA, UALCAN e DepMap). A expressão aumentada desse gene correlacionou-se positivamente com maior agressividade tumoral e pior prognóstico clínico, refletidos em maiores escores de Gleason e menor sobrevida global. Esses resultados indicam que o UGT2B4 pode atuar como um mediador metabólico-chave na ligação entre obesidade e progressão do câncer de próstata
 
-
 A análise de dependência celular (DepMap) reforçou essa hipótese, ao demonstrar que linhagens prostáticas apresentam alta dependência funcional do UGT2B4, com “gene effect scores” negativos, indicando que sua inativação reduz a viabilidade celular. Além disso, a investigação de mecanismos regulatórios por miRNAs revelou supressão dos miRNAs inibidores de UGT2B4 em tumores, o que fornece uma explicação plausível para sua superexpressão e destaca um novo eixo regulatório potencialmente influenciado pelo estado metabólico
-
 
 De modo geral, os resultados sustentam a hipótese inicial de que a obesidade induz alterações específicas no perfil de expressão gênica tumoral, ativando vias metabólicas relacionadas à biotransformação e ao metabolismo de retinoides, e promovendo um ambiente favorável à proliferação celular e à agressividade tumoral.
 
 Esses achados estão em consonância com estudos anteriores que apontam para o papel da obesidade como fator modulador da progressão do câncer de próstata, especialmente em tumores andrógeno-dependentes (Saha, Kolonin & DiGiovanni, 2023; Ferro et al., 2017). No entanto, o presente estudo acrescenta evidências de que essa influência ocorre também por meio da reprogramação metabólica e da regulação pós-transcricional, aspectos pouco explorados na literatura.
-
 
 # Conclusão
 
@@ -289,7 +281,6 @@ O presente estudo permitiu identificar uma assinatura molecular distinta associa
 Entre os genes identificados, UGT2B4 destacou-se como um elemento-chave, apresentando superexpressão significativa em tumores de pacientes obesos e associação direta com pior prognóstico clínico, como maiores escores de Gleason e menor sobrevida livre de progressão. As análises complementares em bases públicas (TCGA, UALCAN e DepMap) confirmaram a dependência funcional de linhagens tumorais desse gene, reforçando seu papel potencial como biomarcador e alvo terapêutico.
 
 Além disso, observou-se que a regulação negativa de miRNAs inibidores de UGT2B4 pode explicar o aumento de sua expressão em contextos obesogênicos, sugerindo um mecanismo de desrepressão pós-transcricional que favorece a progressão tumoral. Esses achados apoiam a hipótese de que a obesidade atua como um modulador metabólico e genético, promovendo um microambiente tumoral mais agressivo e resistente a terapias convencionais.
-
 
 # Trabalhos Futuros
 
@@ -311,7 +302,6 @@ Em um contexto com muito mais tempo e conhecimento poderíamos primeiramente sab
 3.  **Exploração de Mecanismos**
     * **Conexão com Metabolismo:** Investigar se metabólitos associados à obesidade (ácidos graxos, ácidos biliares) modulam a expressão de UGT2B4 em culturas celulares.
     * **Análise do Microambiente:** Usar ferramentas de deconvolução para examinar se a expressão de UGT2B4 se correlaciona com alterações no microambiente tumoral.
-
 
 # Referências Bibliográficas
 
