@@ -155,12 +155,6 @@ Em seguida, o projeto evoluiu para uma etapa mais analítica, na qual os genes s
 
 Por fim, o trabalho avançou para comparar os resultados obtidos nos diferentes grupos. Isso permitiu observar, por exemplo, que certas estruturas da rede permanecem semelhantes em todos os pacientes com câncer, enquanto outras diferenças aparecem apenas quando se compara obesos e não obesos.
 
-### Base de Dados e Extração
-
-Os dados foram inicialmente extraídos do site GEO pelo Rstudio, porém a quantidade de genes extraídos não era suficiente para uma análise adequada das relações entre os genes das diferentes amostras. Além disso, o threshold do foldchange teria que ser muito baixo (menor que 0.3) para que um número significativo de genes fosse considerado como expressivos.
-
-Para esta etapa do trabalho o Orange foi utilizado, sendo que uma inversão de log2 foi aplicada no bloco de extração (GEO Soft Extractor) nos valores de expressão gênica de cada gene, posteriormente as amostras foram separadas manualmente. A aplicação da inversão de log2 fez com que um maior número de genes tivessem um valor de foldchange mais expressivo durante os cálculos.
-
 # Ferramentas
 
 - Orange
