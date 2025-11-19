@@ -213,7 +213,7 @@ Em conjunto, esses resultados mostram que as redes geradas apresentam diferentes
 A análise de enriquecimento funcional realizada com os genes diferencialmente expressos entre tumores de pacientes obesos e não obesos revelou três vias KEGG como principais destaques: *Metabolism of xenobiotics by cytochrome P450*, *Drug metabolism cytochrome P450* e *Retinol metabolism* (Figura 3). Essas vias foram selecionadas por apresentarem os maiores valores de enriquecimento (*Fold Enrichment*), os menores p-valores e por compartilharem um conjunto de genes relevantes: *UGT2B4*, *UGT2B7* e *ADH1C*.
 
 ![Barplot KEGG](./assets/images/barplog_kegg.png)
-> *Figura 3. Barplot das principais vias KEGG enriquecidas nos genes diferencialmente expressos (DEGs).
+> *Figura 3. Barplot das principais vias KEGG enriquecidas nos genes diferencialmente expressos (DEGs)*
 
 ### Metabolism of xenobiotics by cytochrome P450
 
