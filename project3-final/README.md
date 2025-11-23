@@ -221,7 +221,7 @@ Esta rede apresenta uma estrutura moderadamente simples, composta por dois peque
 
 A rede mostra uma estrutura modular com um módulo central altamente interconectado e vários subgrupos periféricos com menor conectividade.
 
-**Características estruturais:**
+* **Características estruturais:**
     * O módulo principal é composto pelos genes *IFI44*, *IFI44L*, *MX1*, *IFIT1*, *IFITM1*, *IFI6*, *IRF1*, *PLSCR1*, *PARP9* e *HERC6*, que formam uma rede densa de interações.
     * Pequenas sub-redes isoladas (*PPP2CB–PPM1B*, *PDK4–HADHA*, *LMNA–EMP1*, *B3GNT5–MUC3A*, *B3GAT3–CSGALNACT1*) indicam regiões locais de interação.
 
