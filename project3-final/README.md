@@ -1,5 +1,5 @@
-# Projeto `Clusters de coexpressão gênica em pacientes com câncer de próstata com e sem obesidade: Impactos na progressão tumoral`
-# Project `Gene Expression Clusters in Prostate Cancer Patients With and Without Obesity: Impacts on Tumor Progression`
+# Projeto `Redes de Expressão Gênica em Câncer de Próstata com e sem Obesidade`
+# Project `Gene Expression Networks in Prostate Cancer With and Without Obesity`
 
 # Descrição Resumida do Projeto
 
@@ -282,7 +282,7 @@ A fim de compreender os mecanismos que regulam a expressão de UGT2B4, uma anál
 
 Em síntese, este estudo identificou que o microambiente tumoral de pacientes obesos com câncer de próstata apresenta uma assinatura molecular única, caracterizada pela superexpressão de genes centrais ao metabolismo de xenobióticos e retinol. O gene *UGT2B4* destacou-se neste contexto, e análises de dados transcriptômicos e de dependência celular de domínio público validaram de forma convergente o seu papel na progressão do PRAD. Estas descobertas sugerem que a obesidade pode favorecer um contexto metabólico que seleciona para a superexpressão de *UGT2B4*, potencialmente contribuindo para uma biologia tumoral mais agressiva e abrindo perspectivas para o desenvolvimento de estratégias terapêuticas direcionadas.
 
-# Discussão
+# Resultados e Discussão
 
 A análise de expressão gênica realizada neste estudo revelou diferenças marcantes entre tumores de pacientes obesos e não obesos, sugerindo que a obesidade influencia significativamente os processos moleculares associados ao câncer de próstata. O conjunto de 38 genes diferencialmente expressos (DEGs) identificados na comparação entre tumores de indivíduos obesos e não obesos demonstra um padrão de regulação consistente com alterações em vias metabólicas e de detoxificação celular.
 
