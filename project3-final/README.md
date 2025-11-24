@@ -277,12 +277,14 @@ Para explorar o potencial do *UGT2B4* como um alvo terapêutico, foram consultad
 A fim de compreender os mecanismos que regulam a expressão de UGT2B4, uma análise in silico de regulação por miRNAs foi conduzida utilizando a ferramenta mirtarget. Os resultados indicaram que os miRNAs repressores de UGT2B4 encontram-se significativamente menos expressos nos tumores. Esta supressão de miRNAs inibidores efetivamente remove um mecanismo de controle pós-transcricional, permitindo a acumulação de UGT2B4. Este achado fornece uma explicação mecanística plausível para a upregulation observada (Figura 7 A-D).
 
 ![Regulação miRNA (A-B)](./assets/images/fPlots_ab.png)
+
 ![Regulação miRNA (C-D)](./assets/images/fPlots_cd.png)
+
 > *Figura 7 Análise Integrada de Regulação e Impacto Clínico* - A) Expressão de UGT2B4 (Tumor vs. Normal) em múltiplos tipos de câncer (Pan-cancer). PRAD destaca-se com uma das maiores sobreregulações. B) Expressão dos 100 principais miRNAs reguladores de UGT2B4 (Tumor vs. Normal). Em PRAD, observa-se que estes miRNAs estão significativamente menos expressos nos tumores. C) Associação da expressão de UGT2B4 com a sobrevida global em diversos cânceres. D) Associação dos miRNAs reguladores de UGT2B4 com a sobrevida global.  Fonte das Figuras 4A-D: Plataforma GSCA.
 
 Em síntese, este estudo identificou que o microambiente tumoral de pacientes obesos com câncer de próstata apresenta uma assinatura molecular única, caracterizada pela superexpressão de genes centrais ao metabolismo de xenobióticos e retinol. O gene *UGT2B4* destacou-se neste contexto, e análises de dados transcriptômicos e de dependência celular de domínio público validaram de forma convergente o seu papel na progressão do PRAD. Estas descobertas sugerem que a obesidade pode favorecer um contexto metabólico que seleciona para a superexpressão de *UGT2B4*, potencialmente contribuindo para uma biologia tumoral mais agressiva e abrindo perspectivas para o desenvolvimento de estratégias terapêuticas direcionadas.
 
-# Resultados e Discussão
+# Discussão
 
 A análise de expressão gênica realizada neste estudo revelou diferenças marcantes entre tumores de pacientes obesos e não obesos, sugerindo que a obesidade influencia significativamente os processos moleculares associados ao câncer de próstata. O conjunto de 38 genes diferencialmente expressos (DEGs) identificados na comparação entre tumores de indivíduos obesos e não obesos demonstra um padrão de regulação consistente com alterações em vias metabólicas e de detoxificação celular.
 
