@@ -214,7 +214,7 @@ Esta rede apresenta uma estrutura moderadamente simples, composta por dois peque
 * O tamanho dos nós representa o *degree* (número de conexões diretas), enquanto as cores refletem a *closeness centrality*.
 * Não há conexões entre os dois módulos, o que indica baixa densidade global e ausência de interações entre os subgrupos.
 
-![Grafo: Tumor obeso vs tumor não obeso](assets/images/Tumor_obeso_vs_tumor_nao_obeso.png)
+> ![Grafo: Tumor obeso vs tumor não obeso](assets/images/Tumor_obeso_vs_tumor_nao_obeso.png)
 > *Figura 1. Grafo gerado no Cytoscape: Tumor obeso vs tumor não obeso*
 
 ### Normal obeso vs normal não obeso
@@ -225,7 +225,7 @@ A rede mostra uma estrutura modular com um módulo central altamente interconect
     * O módulo principal é composto pelos genes *IFI44*, *IFI44L*, *MX1*, *IFIT1*, *IFITM1*, *IFI6*, *IRF1*, *PLSCR1*, *PARP9* e *HERC6*, que formam uma rede densa de interações.
     * Pequenas sub-redes isoladas (*PPP2CB–PPM1B*, *PDK4–HADHA*, *LMNA–EMP1*, *B3GNT5–MUC3A*, *B3GAT3–CSGALNACT1*) indicam regiões locais de interação.
 
-![Grafo: Normal obeso vs normal no obeso](assets/images/Normal_obeso_vs_normal_no_obeso.png)
+![Grafo_Normal obeso vs normal no obeso](assets/images/Normal_obeso_vs_normal_no_obeso.png)
 > *Figura 2. Grafo gerado no Cytoscape: Normal obeso vs normal no obeso*
 
 Em conjunto, esses resultados mostram que as redes geradas apresentam diferentes graus de densidade e conectividade entre os grupos analisados. O uso dos indicadores de centralidade permitiu quantificar a importância estrutural dos nós dentro de cada rede.
