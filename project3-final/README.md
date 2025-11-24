@@ -225,7 +225,7 @@ A rede mostra uma estrutura modular com um módulo central altamente interconect
     * O módulo principal é composto pelos genes *IFI44*, *IFI44L*, *MX1*, *IFIT1*, *IFITM1*, *IFI6*, *IRF1*, *PLSCR1*, *PARP9* e *HERC6*, que formam uma rede densa de interações.
     * Pequenas sub-redes isoladas (*PPP2CB–PPM1B*, *PDK4–HADHA*, *LMNA–EMP1*, *B3GNT5–MUC3A*, *B3GAT3–CSGALNACT1*) indicam regiões locais de interação.
 
-![Grafo: Normal obeso vs normal no obeso](./assets/images/Normal_obeso_vs_normal_no_obeso.png)
+![Grafo: Normal obeso vs normal no obeso](assets/images/Normal_obeso_vs_normal_no_obeso.png)
 > *Figura 2. Grafo gerado no Cytoscape: Normal obeso vs normal no obeso*
 
 Em conjunto, esses resultados mostram que as redes geradas apresentam diferentes graus de densidade e conectividade entre os grupos analisados. O uso dos indicadores de centralidade permitiu quantificar a importância estrutural dos nós dentro de cada rede.
@@ -236,7 +236,7 @@ A análise de enriquecimento funcional realizada com os genes diferencialmente e
 
 Esses genes desempenham papéis distintos e complementares nas três vias: UGT2B7 e UGT2B4 atuam na glucuronidação de xenobióticos, hormônios e fármacos, regulando processos de detoxificação e metabolismo de drogas (Liu et al., 2023); já ADH1C participa da oxidação de álcoois e do retinol, sendo essencial para a formação de ácido retinoico e para a sinalização celular (Kropotova et al., 2014). 
 
-![Barplot KEGG](./assets/images/barplog_kegg.png)
+![Barplot KEGG](assets/images/barplog_kegg.png)
 > *Figura 3. Barplot das principais vias KEGG enriquecidas nos genes diferencialmente expressos (DEGs)*
 
 ### Metabolism of xenobiotics by cytochrome P450
@@ -261,24 +261,24 @@ Para validar os achados iniciais de expressão e investigar o potencial oncogên
 
 Para validar o padrão de expressão desses genes no contexto do câncer de próstata, utilizou-se a plataforma UALCAN, que disponibiliza dados de transcriptômica do TCGA. A análise do perfil de expressão de *UGT2B7* e *ADH1C* no conjunto de dados PRAD (Prostate Adenocarcinoma) mostrou que estes genes são, de fato, *downregulados* no tecido tumoral em comparação com o tecido normal, um padrão inconsistente com um potencial oncogene, o que os torna de pouco interesse para análise atual. Dada esta incongruência, o foco da investigação foi direcionado ao *UGT2B4*, que, pela mesma análise no UALCAN, demonstrou uma clara *upregulation* significativa no tecido tumoral primário, corroborando nosso conjunto de dados inicial e alinhando-se com um possível papel promotor de tumor conforme Figura 4.
 
-![Expressão UGT2B4 (Sample Type)](./assets/images/ugt2b4_prad_sample.png)
+![Expressão UGT2B4 (Sample Type)](assets/images/ugt2b4_prad_sample.png)
 > *Figura 4. Expressão de UGT2B4 em amostras normais.* Expressão diferencial de UGT2B4 no adenocarcinoma de próstata (PRAD) de acordo com o tipo de amostra. Dados do TCGA demonstram um aumento significativo na expressão de UGT2B4 (transcritos por milhão) em tumores primários (n=497) comparados ao tecido normal adjacente (n=52). Fonte: Portal UALCA
 
 Aprofundando a caracterização do *UGT2B4*, os dados do TCGA via UALCAN ainda revelaram que a sua expressão correlaciona-se positivamente com a agressividade do tumor, sendo notavelmente mais elevada em pacientes com escores de Gleason mais altos. Do ponto de vista clínico, essa alta expressão mostrou estar associada a um pior prognóstico, com uma análise de sobrevida global indicando um *Hazard Ratio* (HR) superior a 1. O que pode ser visto nos gráficos abaixo.
 
-![Expressão UGT2B4 (Gleason Score)](./assets/images/ugt2b4_prad_patientGleason1.png)
+![Expressão UGT2B4 (Gleason Score)](assets/images/ugt2b4_prad_patientGleason1.png)
 > *Figura 5. Impacto Clínico da Expressão de UGT2B4* A) Análise de sobrevida global de pacientes com PRAD estratificada pela expressão de UGT2B4. B) Padrão de expressão de UGT2B4 em diferentes estágios de agressividade tumoral (escore de Gleason), mostrando correlação positiva entre expressão gênica e progressão da doença.
 
 Para explorar o potencial do *UGT2B4* como um alvo terapêutico, foram consultados dados públicos de dependência celular gerados pelo projeto DepMap, os quais derivam de experimentos de alto rendimento de *knockout* com CRISPR. A interpretação dos "Gene Effect scores" indica que valores negativos significam que a inativação do gene compromete a viabilidade celular (Figura 6). Neste contexto, a maioria das linhagens de câncer de próstata analisadas apresentou scores negativos para *UGT2B4*. Especificamente, linhagens amplamente utilizadas como DU145, 22RV1, LNCaP e a linhagem de hiperplasia benigna BPH-1 exibiram os scores mais negativos, sugerindo uma forte dependência funcional da atividade de *UGT2B4*. Estes dados de consórcios independentes suportam a hipótese de que a inibição farmacológica do *UGT2B4* poderia ser uma estratégia terapêutica viável para subtipos de câncer de próstata.
 
-![Gene Effect Scores UGT2B4](./assets/images/gene_effect_sc_prostCancer.png)
+![Gene Effect Scores UGT2B4](assets/images/gene_effect_sc_prostCancer.png)
 > *Figura 6.  Ensaio de viabilidade após Knockout* - Score de efeito gênico (Gene Effect) de UGT2B4 em linhagens celulares de câncer de próstata. Valores negativos indicam que a inativação do gene compromete a viabilidade celular. Fonte: DepMap.
 
 A fim de compreender os mecanismos que regulam a expressão de UGT2B4, uma análise in silico de regulação por miRNAs foi conduzida utilizando a ferramenta mirtarget. Os resultados indicaram que os miRNAs repressores de UGT2B4 encontram-se significativamente menos expressos nos tumores. Esta supressão de miRNAs inibidores efetivamente remove um mecanismo de controle pós-transcricional, permitindo a acumulação de UGT2B4. Este achado fornece uma explicação mecanística plausível para a upregulation observada (Figura 7 A-D).
 
-![Regulação miRNA (A-B)](./assets/images/fPlots_ab.png)
+![Regulação miRNA (A-B)](assets/images/fPlots_ab.png)
 
-![Regulação miRNA (C-D)](./assets/images/fPlots_cd.png)
+![Regulação miRNA (C-D)](assets/images/fPlots_cd.png)
 
 > *Figura 7 Análise Integrada de Regulação e Impacto Clínico* - A) Expressão de UGT2B4 (Tumor vs. Normal) em múltiplos tipos de câncer (Pan-cancer). PRAD destaca-se com uma das maiores sobreregulações. B) Expressão dos 100 principais miRNAs reguladores de UGT2B4 (Tumor vs. Normal). Em PRAD, observa-se que estes miRNAs estão significativamente menos expressos nos tumores. C) Associação da expressão de UGT2B4 com a sobrevida global em diversos cânceres. D) Associação dos miRNAs reguladores de UGT2B4 com a sobrevida global.  Fonte das Figuras 4A-D: Plataforma GSCA.
 
