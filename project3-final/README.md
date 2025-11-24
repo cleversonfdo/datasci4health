@@ -96,7 +96,7 @@ As amostras foram extraídas e criados, manualmente através do orange, quatro g
 
 ## Modelo Lógico
 
-> ![Modelo Lógico de Grafos](assets/images/logic_model.png)
+![Modelo Lógico de Grafos](assets/images/logic_model.png)
 
 ## Análises Realizadas
 
